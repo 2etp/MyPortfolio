@@ -1,0 +1,47 @@
+.a1{
+    background-color: gray;
+    color: white;
+}
+.a2{
+    color: white; 
+    font-weight: bold; 
+    background-color: #003399;
+    font-size: x-large;
+}
+
+table, th, td{
+        border: 1px solid #000;
+        border-collapse: collapse;
+        text-align: center;
+        width: 550px;
+        height: 50px;
+        line-height: 12px;
+}
+
+.a3{
+    color: white;
+    font-weight: bold;
+    background-color: #1F50B5;
+    display: inline-block;
+    width: 500px;
+    height: 100px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    
+}
+
+.a4{
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.a5{
+    margin-left: 40px;
+}
+
+.a6{
+    list-style-type: none;
+}
