@@ -1,12 +1,29 @@
+.a0{
+    font-size: 12px;
+    text-align: right;
+}
+
+
 .a1{
-    background-color: gray;
-    color: white;
+    background-color: #F6F6F6;
+    display: inline-block;
+    width: 400px;
+    height: 150px;
+    padding: 20px;
+    
+    
+
 }
 .a2{
     color: white; 
     font-weight: bold; 
     background-color: #003399;
     font-size: x-large;
+    display: inline-block;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
 }
 
 table, th, td{
