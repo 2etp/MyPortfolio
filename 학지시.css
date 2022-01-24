@@ -11,10 +11,8 @@
     height: 100px;
     padding: 20px;
     line-height: 2px;
-    
-    
-
 }
+
 .a2{
     color: white; 
     font-weight: bold; 
@@ -64,15 +62,7 @@ table, th, td{
     list-style-type: none;
 }
 
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.position{
-    position: absolute;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
+.a7{
+    width: 1200px;
+    margin: 20px auto;
 }
