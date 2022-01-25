@@ -6,11 +6,11 @@
 
 .a1{
     background-color: #F6F6F6;
-    display: inline-block;
     width: 300px;
     height: 100px;
     padding: 20px;
     line-height: 2px;
+    float: left;
 }
 
 .a2{
@@ -18,11 +18,12 @@
     font-weight: bold; 
     background-color: #003399;
     font-size: x-large;
-    display: inline-block;
+    
     width: 300px;
     height: 60px;
     text-align: center;
     line-height: 60px;
+    clear: left;
 }
 
 table, th, td{
@@ -64,5 +65,16 @@ table, th, td{
 
 .a7{
     width: 1200px;
-    margin: 20px auto;
+    margin: 10px auto;
+}
+
+.a8{
+    float: left;
+}
+
+.img1{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
 }
