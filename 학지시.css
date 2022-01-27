@@ -6,11 +6,17 @@
 
 .a1{
     background-color: #F6F6F6;
-    width: 300px;
+    width: 420px;
     height: 100px;
     padding: 20px;
     line-height: 2px;
     float: left;
+    margin-left: 30px;
+}
+
+#signup label{
+   
+    width: 100px;
 }
 
 .a2{
@@ -18,12 +24,22 @@
     font-weight: bold; 
     background-color: #003399;
     font-size: x-large;
-    
     width: 300px;
     height: 60px;
     text-align: center;
     line-height: 60px;
     clear: left;
+}
+.a2_1{
+    color: white; 
+    font-weight: bold; 
+    background-color: #003399;
+    font-size: x-large;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    
 }
 
 table, th, td{
@@ -52,12 +68,14 @@ table, th, td{
 
 .a4{
     text-align: center;
-    width: 240px;
-    height: 100px;
+    width: 220px;
+    height: 90px;
     margin-left: 20px;
     border: 1px solid #000;
     border-collapse: collapse;
     line-height: 12px;
+    margin-top: 25px;
+    font-size: 13px;
 }
 
 .a5{
@@ -84,16 +102,16 @@ table, th, td{
 
 }
 
-a:link, a:visited {
+section a:link, a:visited {
     color:black;
     text-decoration: none;
     display: block;
     padding: 10px 20px;
     background-color: white;
     border: 1px solid #ccc;
-    color: black;
-
+    
 }
+
 a:hover {
     background-color: lightgray;
     color:black;
