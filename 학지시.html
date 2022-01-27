@@ -56,16 +56,20 @@
     <img src="image/enter.jpg" width="700px" height="250px" class="img1">
     
     <div class="a1">
+    <form id="signup">
     <h3>LOGIN</h3>
-    <label id="signup">아이디: </label>
+    <label id="signup">아이디:</label>
         <input type="text" placeholder="아이디를 입력하세요.">
-    <button type="submit">로그인</button><br>
-    <label id="signup">비밀번호: </label>
+    <button type="submit">로그인</button>
+    <label id="signup">비밀번호:</label>
         <input type="password" placeholder="비밀번호를 입력하세요."><br>
     <input type="checkbox" value="id_save">ID 저장
-    <button type="submit">아이디 찾기</button>
-    <button type="submit">비밀번호 찾기</button>
+    <!-- 체크박스의 폰트 사이즈가 왜 적용이 안 됨? -->
+    <button type="submit" style="font-size: 10px;">아이디 찾기</button>
+    <button type="submit" style="font-size: 10px;">비밀번호 찾기</button>
+    </form>
     </div>
+    
 
     <div style="float: left;">
     <ul style="font-size: 13px;">
@@ -151,22 +155,23 @@
         </ul>
     </div>
     <br><br><br>
+    
     <div>
     <table style="float: right;" class="a4">
         <tr>
-            <td>기초학력 진단평가</td>
+            <td><a href="#3">기초학력 진단평가</a></td>
         </tr>
         <tr>
-            <td>서식다운로드</td>
+            <td><a href="#3">서식다운로드</td>
         </tr>
         <tr>
-            <td>설문조사</td>
+            <td><a href="#3">설문조사</td>
         </tr>
         <tr>
-            <td>스마트교육플랫폼 PLATO</td>
+            <td><a href="#3">스마트교육플랫폼 PLATO</td>
         </tr>
         <tr>
-            <td>특허관리(PIMS)</td>
+            <td><a href="#3">특허관리(PIMS)</td>
         </tr>
     </table>
     </div>
@@ -174,16 +179,16 @@
     <div>
     <table style="float: right;" class="a4">
         <tr>
-            <td>인터넷 증명발급</td>
+            <td><a href="#3">인터넷 증명발급</td>
         </tr>
         <tr>
-            <td>우편신청 및 기타증명발급</td>
+            <td><a href="#3">우편신청 및 기타증명발급</td>
         </tr>
         <tr>
-            <td>Course List(English)</td>
+            <td><a href="#3">Course List(English)</td>
         </tr>
         <tr>
-            <td>PNU-연구실안전정보망</td>
+            <td><a href="#3">PNU-연구실안전정보망</td>
         </tr>
         <tr>
             <td><select>
@@ -197,7 +202,8 @@
                     <option value=pnu7 >취업전략과</option>
                     <option value=pnu8 >보건진료소</option>
                     <option value=pnu9 >정보화본부</option>
-            </select></td>
+                </select>
+            </td>
         </tr>
     </table>
     </div>
