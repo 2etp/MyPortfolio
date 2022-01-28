@@ -1,6 +1,6 @@
 .a0{
-    font-size: 12px;
-    float: left;
+    font-size: 11px;
+    float: right;
 }
 
 
@@ -33,12 +33,13 @@
     text-align: center;
     line-height: 60px;
     float: left;
+    margin-left: 40px;
 }
 .a2_1{
     color: #4C4C4C;
     background-color: lightskyblue;
     font-size: 20px;
-    width: 950px;
+    width: 910px;
     height: 60px;
     text-align: center;
     line-height: 60px;
@@ -47,7 +48,7 @@
 }
 
 table, th, td{
-        border: 1px solid #000;
+        border: 1px solid white;
         border-collapse: collapse;
         text-align: center;
         width: 550px;
@@ -93,7 +94,7 @@ table, th, td{
 
 .a7{
     width: 1200px;
-    margin: 10px auto;
+    margin: auto;
 }
 
 .a8{
@@ -104,6 +105,7 @@ table, th, td{
     float: left;
     margin-right: 10px;
     margin-bottom: 10px;
+    margin-left: 40px;
 
 }
 
@@ -128,13 +130,22 @@ div a:link, a:visited{
 
 div a:hover{
     text-decoration: underline;
-    
 }
 
-div table :nth-child(2n){
+/* /* div tr:nth-child(2n+1){
     background: #D5D5D5;
 }
 
-/* div table :nth-child(2n+1){
-    background: #BDBDBD;
+div tr:nth-child(2n){
+    background: skyblue;
 } */
+
+tr[title |= de]{
+    background-color: #D5D5D5;
+}
+
+tr[title |= li]{
+    background-color: #EAEAEA
+    
+}
+
