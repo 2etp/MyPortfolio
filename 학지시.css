@@ -113,10 +113,17 @@ section a:link, a:visited{
     color:black;
     text-decoration: none;
     display: block;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     background-color: white;
     border: 1px solid #ccc; 
-}
+    font-size: 15px;
+    width: 96.6px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+
+    }
 
 a:hover{
     background-color: #D5D5D5;
@@ -132,14 +139,6 @@ div a:hover{
     text-decoration: underline;
 }
 
-/* /* div tr:nth-child(2n+1){
-    background: #D5D5D5;
-}
-
-div tr:nth-child(2n){
-    background: skyblue;
-} */
-
 tr[title |= de]{
     background-color: #D5D5D5;
 }
@@ -148,4 +147,5 @@ tr[title |= li]{
     background-color: #EAEAEA
     
 }
+
 
