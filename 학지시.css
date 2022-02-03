@@ -75,7 +75,7 @@ table, th, td{
     text-align: center;
     width: 220px;
     height: 90px;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 1px solid #000;
     border-collapse: collapse;
     line-height: 12px;
@@ -84,9 +84,9 @@ table, th, td{
 
 }
 
-/* .a5{
-    margin-left: 40px;
-} */
+.a5{
+    margin-right: 40px;
+}
 
 .a6{
     list-style-type: none;
@@ -104,7 +104,6 @@ table, th, td{
 .img1{
     float: left;
     margin-right: 10px;
-    margin-bottom: 10px;
     margin-left: 40px;
 
 }
@@ -113,7 +112,6 @@ section a:link, a:visited{
     color:black;
     text-decoration: none;
     display: block;
-    /* padding: 10px 20px; */
     background-color: white;
     border: 1px solid #ccc; 
     font-size: 15px;
@@ -129,12 +127,18 @@ a:hover{
     color:black;
 }
 
+nav div a:hover{
+    background-color: white;
+    color:black;
+    text-decoration: underline;
+}
+
 div a:link, a:visited{
     color:black;
     text-decoration: none;
 }
 
-div a:hover{
+tr a:hover{
     text-decoration: underline;
 }
 
@@ -143,8 +147,7 @@ tr[title |= de]{
 }
 
 tr[title |= li]{
-    background-color: #EAEAEA
-    
+    background-color: #EAEAEA;
 }
 
 
