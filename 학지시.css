@@ -28,7 +28,7 @@ html{
 .a2{
     color: white; 
     font-weight: bold; 
-    background-color: #003399;
+    background-color: #3482ca;
     font-size: 20px;
     width: 250px;
     height: 60px;
@@ -39,14 +39,16 @@ html{
 }
 .a2_1{
     color: #4C4C4C;
-    background-color: lightskyblue;
+    background-color: #f7f8fa;
     font-size: 20px;
-    width: 910px;
+    width: 909px;
     height: 60px;
     text-align: center;
     line-height: 60px;
+    border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
 
-    
 }
 
 table, th, td{
