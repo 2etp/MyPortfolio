@@ -177,4 +177,10 @@ tr[title |= li]{
     background-color: #EAEAEA;
 }
 
+ul.marker{
+    list-style-image: url("image/marker.jpg");
+    line-height: 25px;
+
+}
+
 
