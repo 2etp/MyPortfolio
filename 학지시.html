@@ -5,26 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산대학교 학생지원시스템</title>
-    <link rel="stylesheet" href="학지시.css">
-
+    <link rel="stylesheet" href="학지시_메인.css">
 </head>
+
 <body>
     <header style="height: 130px; width: 100%;">    
         <div style="width: 1200px; margin: 0 auto;">
         
-        <nav>
-            <div style="margin-left: 750px;" class="a0">
-                <a href="#1" style="margin-left: 10px;">로그인</a>
-                <a href="#1" style="margin-left: 10px; color: red;">홈페이지의견수렴게시판</a>
-                <a href="#1" style="margin-left: 10px;">밀양대학교 학생지원시스템</a>
-                <a href="#1" style="margin-left: 10px;">PNU Internatioal</a>
-            </div>
-        </nav>    
+            <nav>
+                <div style="margin-left: 750px;" class="a0">
+                    <a href="#1" style="margin-left: 10px;">로그인</a>
+                    <a href="#1" style="margin-left: 10px; color: red;">홈페이지의견수렴게시판</a>
+                    <a href="#1" style="margin-left: 10px;">밀양대학교 학생지원시스템</a>
+                    <a href="#1" style="margin-left: 10px;">PNU Internatioal</a>
+                </div>
+            </nav>    
            <div style="height: 50px;"> <a href="#1"><img src="image/pusan univ.jpg" 
                 width="180px" height="50px" style="float: left; margin-left: 30px;"></a>
            </div>
             
         </div>
+
         <div style="height: 29px; width: 100%;"></div>
 
         <section>
@@ -104,10 +105,10 @@
             </div>
         </section>
 
-    <br><br>
+    <br><br><br>
 
-    <div style="margin-left: 40px; margin-top: 20px;">
-        <ul style="clear: left;">
+    <div style="margin-left: 40px;">
+        <ul style="clear: left;" class="marker">
             <li>2022학년도 1학기 재학생 등록금 납부 안내</li>
             <li>2021학년도 겨울계절수업 성적 처리 일정 수정 안내</li>
             <li>2022학년도 제 1학기 학부 재입학 허가 안내</li>
@@ -120,8 +121,8 @@
     <section>
         <div>
             <ul style="list-style-type: none;">
-                <li style="float: left;"><a href="#4" style="width: 200px;">대학공지</a></li>
-                <li style="float: left;"><a href="#4" style="width: 200px;">학과공지</a></li>
+                <li style="float: left;" id="change_btn1"><a href="#4" style="width: 200px;" id="main_tab1">대학공지</a></li>
+                <li style="float: left;" id="change_btn2"><a href="#4" style="width: 200px;" id="main_tab2">학과공지</a></li>
                 <li style="float: left;"><a href="#4" style="width: 200px;">학사일정</a></li>
                 <li style="float: left;"><a href="#4" style="width: 60px; 
                     border-right: 1px solid #ccc;
@@ -129,10 +130,10 @@
         </div>
     </section>
 
-    <br><br>
+    <br><br><br>
     
         <div>
-            <ul style="margin-left: 40px;">
+            <ul style="margin-left: 40px;" class="marker">
                 <li>[교육혁신과] 2022학년도 1학기 교류 수학 안내(영남대학교)</li>
                 <li>코로나 19 대응 2022학년도 1학기 학사운영 방안</li>
                 <li>국립대학육성사업 대학생 홍보대사 7 8기 모집 공고</li>
@@ -152,7 +153,7 @@
 
     <br><br><br><br><br>
 
-    <div class="a3" style="float: left; margin-top: 10px;">
+    <div class="a3" style="float: left; margin-top: 10px; margin-bottom: 10px;">
         <h2>즐겨찾는 메뉴</h2>
         <ul>
             <li style="float: left;">학부 수강편람</li>
@@ -215,12 +216,13 @@
             </tr>
         </table>
     </div>
+    
     </main>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <hr style="height: 1px; border:none; background-color: #D5D5D5;">
 
-    <div style="background-color: #F6F6F6;">
+    <hr style="height: 1px; border:none; background-color: #D5D5D5; margin-top: 500px;">
+
+    <div style="background-color: #F6F6F6; margin-top: 20px;">
         <footer class="a7">
             <ul class="a6">
                 <li style="float: left;"><a href="##" class="a5" style="color: #333;">부산대학교 홈페이지</a></li>
@@ -230,7 +232,9 @@
         </footer>
         <br>
         <hr style="height: 1px; border:none; background-color: #D5D5D5;">
-        <br><br><br><br>
+        <div class="ft_style">Copyright 2016 Pusan National University. All rights reserved.<br><br><br><br></div>
     </div>
+
+    <script src="학지시_메인.js"></script>
 </body>
 </html>

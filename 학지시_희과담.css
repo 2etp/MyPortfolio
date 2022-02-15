@@ -1,0 +1,31 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 1200px;
+    margin: auto;
+}
+
+table, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+
+
+}
+
+.list :nth-child(2n+1){
+    font-size: 14px;
+    background-color: #4ba3d6;
+    width: 150px;
+    color: white;
+
+}
+.contents :nth-child(2n){
+    font-size: 14px;
+    background-color: #F6F6F6;
+    width: 150px;
+    color: black;
+}
