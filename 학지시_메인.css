@@ -197,15 +197,15 @@ ul.marker{
 }
 
 /* Slideshow container */
-/* .slideshow-container{
+.slideshow-container{
     max-width: 100px;
     max-height: 100px;
     position: relative;
-} */
+}
 
-/* .slideshow-container .mySlides img{
+.slideshow-container .mySlides img{
     height: 250px;
-} */
+}
 
 /* Hide the images by default */
 .mySlides{
@@ -216,9 +216,9 @@ ul.marker{
 .prev, .next{
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 100px;
     width: auto;
-    margin-top: -22px;
+    /* margin-top: -22px; */
     padding: 16px;
     color: white;
     font-weight: bold;
@@ -230,7 +230,12 @@ ul.marker{
 
 /* Position the "next button" to the right */
 .next{
-    right: 0;
+    right: -520px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev{
+    left: 50px;
     border-radius: 3px 0 0 3px;
 }
 
