@@ -15,55 +15,73 @@ const changeBtn6 = document.getElementById("change_btn6");
 function mainTabClick1() {
     tabClick1.style.borderTop = "#427fc2 2px solid";
     tabClick1.style.borderBottom = "none";
+    tabClick1.style.backgroundColor = "white";
     tabClick2.style.borderTop = "#ccc 1px solid";
     tabClick2.style.borderBottom = "#ccc 1px solid";
+    tabClick2.style.backgroundColor = "#F6F6F6";
     tabClick3.style.borderTop = "#ccc 1px solid";
     tabClick3.style.borderBottom = "#ccc 1px solid";
+    tabClick3.style.backgroundColor = "#F6F6F6";
 }
 
 function mainTabClick2() {
     tabClick1.style.borderTop = "#ccc 1px solid";
     tabClick1.style.borderBottom = "#ccc 1px solid";
+    tabClick1.style.backgroundColor = "#F6F6F6";
     tabClick2.style.borderTop = "#427fc2 2px solid";
     tabClick2.style.borderBottom = "none";
+    tabClick2.style.backgroundColor = "white";
     tabClick3.style.borderTop = "#ccc 1px solid";
     tabClick3.style.borderBottom = "#ccc 1px solid";
+    tabClick3.style.backgroundColor = "#F6F6F6";
 }
 
 function mainTabClick3() {
     tabClick1.style.borderTop = "#ccc 1px solid";
     tabClick1.style.borderBottom = "#ccc 1px solid";
+    tabClick1.style.backgroundColor = "#F6F6F6";
     tabClick2.style.borderTop = "#ccc 1px solid";
     tabClick2.style.borderBottom = "#ccc 1px solid";
+    tabClick2.style.backgroundColor = "#F6F6F6";
     tabClick3.style.borderTop = "#427fc2 2px solid";
     tabClick3.style.borderBottom = "none";
+    tabClick3.style.backgroundColor = "white";
 }
 
 function mainTabClick4() {
     tabClick4.style.borderTop = "#427fc2 2px solid";
     tabClick4.style.borderBottom = "none";
+    tabClick4.style.backgroundColor = "white";
     tabClick5.style.borderTop = "#ccc 1px solid";
     tabClick5.style.borderBottom = "#ccc 1px solid";
+    tabClick5.style.backgroundColor = "#F6F6F6";
     tabClick6.style.borderTop = "#ccc 1px solid";
     tabClick6.style.borderBottom = "#ccc 1px solid";
+    tabClick6.style.backgroundColor = "#F6F6F6";
 }
 
 function mainTabClick5() {
     tabClick4.style.borderTop = "#ccc 1px solid";
     tabClick4.style.borderBottom = "#ccc 1px solid";
+    tabClick4.style.backgroundColor = "#F6F6F6";
     tabClick5.style.borderTop = "#427fc2 2px solid";
     tabClick5.style.borderBottom = "none";
+    tabClick5.style.backgroundColor = "white";
     tabClick6.style.borderTop = "#ccc 1px solid";
     tabClick6.style.borderBottom = "#ccc 1px solid";
+    tabClick6.style.backgroundColor = "#F6F6F6";
 }
 
 function mainTabClick6() {
     tabClick4.style.borderTop = "#ccc 1px solid";
     tabClick4.style.borderBottom = "#ccc 1px solid";
+    tabClick4.style.backgroundColor = "#F6F6F6";
     tabClick5.style.borderTop = "#ccc 1px solid";
     tabClick5.style.borderBottom = "#ccc 1px solid";
+    tabClick5.style.backgroundColor = "#F6F6F6";
     tabClick6.style.borderTop = "#427fc2 2px solid";
     tabClick6.style.borderBottom = "none";
+    tabClick6.style.backgroundColor = "white";
 }
 
 changeBtn1.addEventListener("click", mainTabClick1); 

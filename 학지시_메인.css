@@ -137,12 +137,12 @@ footer ul a:hover{
     text-align: center;
     line-height: 50px;
     }
-    /* #427fc2 2px solid */
+    /* 2px solid #427fc2 */
 .main_tab ul a:link, .main_tab a:visited{
     color:black;
     text-decoration: none;
     display: block;
-    background-color: white;
+    background-color: #F6F6F6;
     border-left: 1px solid #ccc;  
     border-top: 1px solid #ccc; 
     border-bottom: 1px solid #ccc; 
@@ -153,6 +153,12 @@ footer ul a:hover{
     text-align: center;
     line-height: 50px;
     }
+
+.first_tab li a:link, .first_tab a:visited{
+    border-top: 2px solid #427fc2; 
+    border-bottom: none;
+    background-color: white;
+}
 
 a:hover{
     background-color: #D5D5D5;
