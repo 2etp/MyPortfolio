@@ -127,9 +127,9 @@ footer ul a:hover{
     color:black;
     text-decoration: none;
     display: block;
-    background-color: white;
-    border-left: 1px solid #ccc; 
-    border-bottom: 1px solid #ccc; 
+    background-color: #fff;
+    border-left: 1px solid #eeeeee; 
+    border-bottom: 1px solid #eeeeee; 
     font-size: 15px;
     width: 96.6px;
     height: 50px;
