@@ -1,0 +1,15 @@
+/* .subjectsearch td a:link, .subjectsearch td a:visited{
+    text-decoration: none;
+    color:black;
+} */
+
+body{
+    width: 1200px;
+    margin: auto;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}

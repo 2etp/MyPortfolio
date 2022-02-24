@@ -12,7 +12,7 @@
     <h1 style="color: blue; text-align: center;">2022 학년도 1학기 희망과목담기<br>
     <span style="font-size: 26px;">Adding Course you want to regiter for</span></h1>
 
-    <p>★ 희망과목담기를 하였다고 수강신청이 완료된 것이 아니며, 수강신청기간에 정삭적으로
+    <p>★ 희망과목담기를 하였다고 수강신청이 완료된 것이 아니며, 수강신청기간에 정상적으로
         수강신청을 하여야 함(Course registration is not completed just by adding courses.
         To complete it, you should register courses during the course registration period.)
     </p>
@@ -30,11 +30,11 @@
             <td>학번<br> Student ID</td>
             <td>202237543</td>
             <td>성명<br> Name</td>
-            <td>윤겔라</td>
+            <td>카카오톡</td>
             <td>학과(부)<br> Department</td>
             <td>공과대학</td>
             <td>전공<br> Major</td>
-            <td colspan="3">염동력학과</td>
+            <td colspan="3">채팅학과</td>
         </tr>
         <tr class="contents list">
             <td>학년<br> Grade</td>
@@ -67,16 +67,20 @@
             <td><input style="margin-bottom: 30px; width: 100px;"></td>
             <td>분반 :<br> Section</td>
             <td><input style="margin-bottom: 30px; width: 100px;"></td>
-            <td><button style="float: left;">희망과목담기 register</button>
+            <td style="width: 820px;" class="subjectsearch">
+                <button style="float: left;">희망과목담기 register</button>
                 <button style="float: left;">지우기 Delete</button>
-                <button style="float: left;">교과목검색 Search Courses</button>
+                <button type="button" onclick="popUp();" 
+                    style="float: left;">교과목검색 Search Courses</button>
                 <button style="float: left;">교과목검색(상세) Search Courses(Details)</button><br>
-                <button style="float: left;">로그아웃 Log-out</button>
+                <button style="clear: left; float: left;">로그아웃 Log-out</button>
             </td>
         </tr>
         <tr>
             <td colspan="5" style="height: 50px;"></td>
         </tr>
     </table>
+
+    <script src="교과목검색.js"></script>
 </body>
 </html>
