@@ -8,17 +8,40 @@ body{
     margin: auto;
 }
 
-table, tr, td{
+.list table, .list tr, .list td{
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
 
-table td:nth-child(4){
+.list table td:nth-child(4){
     color: orange;
 }
 
-table tr:nth-child(1){
-    background-color: #4ba3d6;
+.list table tr:nth-child(1){
+    background-color: #7fb8da;
     color: white;
 }
+
+a:link, a:visited{
+    text-decoration: none;
+    color: orange;
+    
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.navi table, .navi tr, .navi td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    border-top: 2px solid #056399;
+    border-bottom: 2px solid #056399;
+    width: 1200px;
+    height: 70px;
+    
+    
+    
+} 
