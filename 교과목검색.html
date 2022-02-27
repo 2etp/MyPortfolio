@@ -11,8 +11,9 @@
 <body>
     <h2 style="color: #F2CB61; text-align: center;">2022학년도 1학기 개설강좌 검색</h2>
 
-    <section class="navi">
-        <table>
+    <!-- 밑의 두 스타일은 창 크기에 상관없이 요소들을 항상 가운데 정렬하는 방법임 -->
+    <div class="navi" style="width: 0px; margin: auto;">
+        <table style="position: relative; width: 900px; margin-left: -450px;">
             <tr>
                 <td>검색 방법</td>
                 <td>
@@ -32,10 +33,11 @@
                         <option value="5">컴퓨터공학과</option>
                         <option value="6">화학공학과</option>
                     </select>
+                    <button type="submit">검색</button>
                 </td>
             </tr>
         </table>
-    </section> 
+    </div> 
 
     <br>
 
@@ -43,11 +45,10 @@
     <span style="color: blue; font-weight: bold;">현재 수강인원표시는 첫날 오전 11시 이후에 서비스됩니다.(서버시스템의 부하급증시는 서비스가
     중단됨을 양지하시기 바랍니다)</span></p>
     
-
-    <div class="list">
-        <table>
+    <div class="list" style="width: 0px; margin: auto;">
+        <table style="position: relative; width: 900px; margin-left: -450px;">
             <tr>
-                <td>원어 강의</td>
+                <td>원어 <br>강의</td>
                 <td>학년</td>
                 <td>교과구분</td>
                 <td style="color: white;">코드</td>

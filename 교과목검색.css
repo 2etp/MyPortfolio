@@ -1,17 +1,23 @@
-/* .subjectsearch td a:link, .subjectsearch td a:visited{
-    text-decoration: none;
-    color:black;
+/* body{
+    width: 1000px;
+    margin: auto;
 } */
 
-body{
-    width: 1200px;
-    margin: auto;
-}
-
-.list table, .list tr, .list td{
-    border: 1px solid black;
+.navi table, .navi tr, .navi td{
+    border: 1px solid #717171;
     border-collapse: collapse;
     text-align: center;
+    border-top: 2px solid #056399;
+    border-bottom: 2px solid #056399;
+    height: 70px; 
+} 
+
+.list table, .list tr, .list td{
+    border: 1px solid #717171;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 14px;
+    height: 50px;
 }
 
 .list table td:nth-child(4){
@@ -33,15 +39,7 @@ a:hover{
     text-decoration: underline;
 }
 
-.navi table, .navi tr, .navi td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-    border-top: 2px solid #056399;
-    border-bottom: 2px solid #056399;
-    width: 1200px;
-    height: 70px;
-    
-    
-    
-} 
+.list table td:nth-child(n){
+    padding-left: 6px;
+    padding-right: 6px;
+}
