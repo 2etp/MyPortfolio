@@ -8,24 +8,40 @@ body{
     margin: auto;
 }
 
-table, tr, td{
-    border: 1px solid black;
+.personal_info table, .personal_info tr, .personal_info td{
+    border: 1px solid #717171;
     border-collapse: collapse;
     text-align: center;
-    
-
+    padding: 5px;
 }
 
-.list :nth-child(2n+1){
+.info_odd :nth-child(2n+1){
     font-size: 14px;
-    background-color: #4ba3d6;
+    background-color: #4f9cc9;
     width: 150px;
     color: white;
 
 }
-.contents :nth-child(2n){
+.info_even :nth-child(2n){
     font-size: 14px;
     background-color: #F6F6F6;
     width: 150px;
     color: black;
+}
+
+.menu table, .menu tr, .menu td{
+    border: 1px solid #717171;
+    border-collapse: collapse;
+    text-align: center;
+    border-top: 2px solid #056399;
+    border-bottom: 2px solid #056399;
+}
+
+.main_contents table, .main_contents tr, .main_contents td{
+    border: 1px solid #717171;
+    border-collapse: collapse;
+    text-align: center;
+    width: 1200px;
+    height: 30px;
+    font-size: 13px;
 }
