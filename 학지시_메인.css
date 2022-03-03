@@ -297,3 +297,33 @@ ul.marker{
     from {opacity: .4}
     to {opacity: 1}
 }
+
+.maintab_list1{
+    position: absolute;
+    top: 630px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 1;
+}
+
+.maintab_list2{
+    position: absolute;
+    top: 630px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 0;
+}
+
+.maintab_list3{
+    position: absolute;
+    top: 630px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 0;
+}

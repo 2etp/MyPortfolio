@@ -12,6 +12,7 @@ const changeBtn4 = document.getElementById("change_btn4");
 const changeBtn5 = document.getElementById("change_btn5");
 const changeBtn6 = document.getElementById("change_btn6");
 
+
 function mainTabClick1() {
     tabClick1.style.borderTop = "#427fc2 2px solid";
     tabClick1.style.borderBottom = "none";
@@ -22,6 +23,7 @@ function mainTabClick1() {
     tabClick3.style.borderTop = "#ccc 1px solid";
     tabClick3.style.borderBottom = "#ccc 1px solid";
     tabClick3.style.backgroundColor = "#F6F6F6";
+  
 }
 
 function mainTabClick2() {
