@@ -298,6 +298,7 @@ ul.marker{
     to {opacity: 1}
 }
 
+/* 아래 3개의 클래스는 메인탭 클릭 시 해당 자료 띄우는 기능 */
 .maintab_list1{
     position: absolute;
     top: 630px;

@@ -12,8 +12,13 @@ const changeBtn4 = document.getElementById("change_btn4");
 const changeBtn5 = document.getElementById("change_btn5");
 const changeBtn6 = document.getElementById("change_btn6");
 
+const mainTabShow1 = document.getElementById("maintab_show1");
+const mainTabShow2 = document.getElementById("maintab_show2");
+const mainTabShow3 = document.getElementById("maintab_show3");
+
 
 function mainTabClick1() {
+    // 메인 페이지의 메인탭 클릭 시, 색상 변화 
     tabClick1.style.borderTop = "#427fc2 2px solid";
     tabClick1.style.borderBottom = "none";
     tabClick1.style.backgroundColor = "white";
@@ -23,6 +28,10 @@ function mainTabClick1() {
     tabClick3.style.borderTop = "#ccc 1px solid";
     tabClick3.style.borderBottom = "#ccc 1px solid";
     tabClick3.style.backgroundColor = "#F6F6F6";
+    // 메인 페이지의 메인탭 클릭 시, 각 탭에 해당하는 리스트 제시
+    mainTabShow1.style.opacity = "1";
+    mainTabShow2.style.opacity = "0";
+    mainTabShow3.style.opacity = "0";
   
 }
 
@@ -36,6 +45,9 @@ function mainTabClick2() {
     tabClick3.style.borderTop = "#ccc 1px solid";
     tabClick3.style.borderBottom = "#ccc 1px solid";
     tabClick3.style.backgroundColor = "#F6F6F6";
+    mainTabShow1.style.opacity = "0";
+    mainTabShow2.style.opacity = "1";
+    mainTabShow3.style.opacity = "0";
 }
 
 function mainTabClick3() {
@@ -48,6 +60,9 @@ function mainTabClick3() {
     tabClick3.style.borderTop = "#427fc2 2px solid";
     tabClick3.style.borderBottom = "none";
     tabClick3.style.backgroundColor = "white";
+    mainTabShow1.style.opacity = "0";
+    mainTabShow2.style.opacity = "0";
+    mainTabShow3.style.opacity = "1";
 }
 
 function mainTabClick4() {
@@ -92,6 +107,7 @@ changeBtn3.addEventListener("click", mainTabClick3);
 changeBtn4.addEventListener("click", mainTabClick4); 
 changeBtn5.addEventListener("click", mainTabClick5); 
 changeBtn6.addEventListener("click", mainTabClick6);
+
 
 let slideIndex = 0; // slide index
 
