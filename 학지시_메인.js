@@ -15,6 +15,9 @@ const changeBtn6 = document.getElementById("change_btn6");
 const mainTabShow1 = document.getElementById("maintab_show1");
 const mainTabShow2 = document.getElementById("maintab_show2");
 const mainTabShow3 = document.getElementById("maintab_show3");
+const mainTabShow4 = document.getElementById("maintab_show4");
+const mainTabShow5 = document.getElementById("maintab_show5");
+const mainTabShow6 = document.getElementById("maintab_show6");
 
 
 function mainTabClick1() {
@@ -75,6 +78,9 @@ function mainTabClick4() {
     tabClick6.style.borderTop = "#ccc 1px solid";
     tabClick6.style.borderBottom = "#ccc 1px solid";
     tabClick6.style.backgroundColor = "#F6F6F6";
+    mainTabShow4.style.opacity = "1";
+    mainTabShow5.style.opacity = "0";
+    mainTabShow6.style.opacity = "0";
 }
 
 function mainTabClick5() {
@@ -87,6 +93,9 @@ function mainTabClick5() {
     tabClick6.style.borderTop = "#ccc 1px solid";
     tabClick6.style.borderBottom = "#ccc 1px solid";
     tabClick6.style.backgroundColor = "#F6F6F6";
+    mainTabShow4.style.opacity = "0";
+    mainTabShow5.style.opacity = "1";
+    mainTabShow6.style.opacity = "0";
 }
 
 function mainTabClick6() {
@@ -99,6 +108,9 @@ function mainTabClick6() {
     tabClick6.style.borderTop = "#427fc2 2px solid";
     tabClick6.style.borderBottom = "none";
     tabClick6.style.backgroundColor = "white";
+    mainTabShow4.style.opacity = "0";
+    mainTabShow5.style.opacity = "0";
+    mainTabShow6.style.opacity = "1";
 }
 
 changeBtn1.addEventListener("click", mainTabClick1); 
