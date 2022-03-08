@@ -268,7 +268,7 @@ ul.marker{
     height: 15px;
     width: 15px;
     position: relative;
-    top: 250px;
+    top: 260px;
     right: 580px;
     margin: 0 2px;
     background-color: #bbb;
@@ -302,7 +302,7 @@ ul.marker{
 /* 아래 3개의 클래스는 첫 번째 메인탭 클릭 시 해당 자료 띄우는 기능 */
 .maintab_list1{
     position: absolute;
-    top: 630px;
+    top: 620px;
     width: 500px;
     height: 130px;
     background: rgba(255, 255, 255, 1);
@@ -312,7 +312,7 @@ ul.marker{
 
 .maintab_list2{
     position: absolute;
-    top: 630px;
+    top: 620px;
     width: 500px;
     height: 130px;
     background: rgba(255, 255, 255, 1);
@@ -322,7 +322,7 @@ ul.marker{
 
 .maintab_list3{
     position: absolute;
-    top: 630px;
+    top: 620px;
     width: 500px;
     height: 130px;
     background: rgba(255, 255, 255, 1);
@@ -333,7 +333,7 @@ ul.marker{
 /* 아래 3개의 클래스는 두 번째 메인탭 클릭 시 해당 자료 띄우는 기능 */
 .maintab_list4{
     position: absolute;
-    top: 880px;
+    top: 870px;
     width: 500px;
     height: 130px;
     background: rgba(255, 255, 255, 1);
@@ -343,7 +343,7 @@ ul.marker{
 
 .maintab_list5{
     position: absolute;
-    top: 880px;
+    top: 870px;
     width: 500px;
     height: 130px;
     background: rgba(255, 255, 255, 1);
@@ -353,7 +353,7 @@ ul.marker{
 
 .maintab_list6{
     position: absolute;
-    top: 880px;
+    top: 870px;
     width: 500px;
     height: 130px;
     background: rgba(255, 255, 255, 1);
