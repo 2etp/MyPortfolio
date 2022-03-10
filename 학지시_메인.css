@@ -135,12 +135,12 @@ footer ul a:hover{
     background-color: #fff;
     border-left: 1px solid #eeeeee; 
     border-bottom: 1px solid #eeeeee; 
-    font-size: 15px;
+    font-size: 14px;
     width: 96.6px;
     height: 50px;
     box-sizing: border-box;
     text-align: center;
-    line-height: 50px;
+    padding-bottom: 5px;
     }
 
 .main_tab ul a:link, .main_tab a:visited{
