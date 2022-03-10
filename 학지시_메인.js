@@ -151,8 +151,10 @@ function currentSlide(n) {
 function showSlides(n) {
   
     let slides = document.getElementsByClassName("mySlides");
+    let slides1 = document.getElementsByClassName("mySlides1");
     let dots = document.getElementsByClassName("dot");
     let size = slides.length;
+    let size1 = slides1.length;
   
     if ((n+1) > size) {
       slideIndex = 0; n = 0;
@@ -170,4 +172,17 @@ function showSlides(n) {
   
     slides[n].style.display = "block";
     dots[n].className += " active";
+
+    if ((n+1) > size1) {
+      slideIndex = 0; n = 0;
+    }else if (n < 0) {
+      slideIndex = (size1-1);
+      n = (size1-1);
+    }
+  
+    for (i = 0; i < slides1.length; i++) {
+        slides1[i].style.display = "none";
+    }
+  
+    slides1[n].style.display = "block";
   }

@@ -33,7 +33,7 @@ body:not(footer){
     color: white; 
     font-weight: bold; 
     background-color: #3482ca;
-    font-size: 20px;
+    font-size: 16px;
     width: 250px;
     height: 60px;
     text-align: center;
@@ -43,17 +43,21 @@ body:not(footer){
 }
 
 .main_bar2{
-    color: #4C4C4C;
+    color: #636a74;
     background-color: #f7f8fa;
-    font-size: 20px;
+    font-size: 16px;
     width: 909px;
     height: 60px;
     text-align: center;
     line-height: 60px;
     border-top: 1px solid #D5D5D5;
     border-right: 1px solid #D5D5D5;
-    border-bottom: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;  
+}
 
+.main_bar2 a:hover{
+    text-decoration: underline;
+    background-color: #f7f8fa;
 }
 
 table, th, td{
@@ -216,6 +220,10 @@ ul.marker{
 
 /* Hide the images by default */
 .mySlides{
+    display: none;
+}
+
+.mySlides1{
     display: none;
 }
 
