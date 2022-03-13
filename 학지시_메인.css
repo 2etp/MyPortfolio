@@ -140,9 +140,15 @@ footer ul a:hover{
     height: 50px;
     box-sizing: border-box;
     text-align: center;
-    padding-top: 6px;
-    
+    padding-top: 6px;  
     }
+
+.navi_inner ul a:link, .navi_inner a:visited{
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 150px;
+}
 
 .main_tab ul a:link, .main_tab a:visited{
     color:black;
