@@ -128,7 +128,7 @@ footer ul a:hover{
 
 }
 
-.navi > ul a:link, .navi ul a:visited{
+.navi ul li{
     color:black;
     text-decoration: none;
     display: block;
@@ -143,14 +143,25 @@ footer ul a:hover{
     padding-top: 6px;  
     }
 
-.navi_inner ul a:link, .navi_inner ul a:visited{
+.navi_inner li{
     color: black;
     text-decoration: none;
     display: block;
-    width: 200px;
+    width: 150px;
+    
 }
 
 
+.navi_inner{
+    position: absolute;
+}
+
+.navi_inner li:hover{
+    background-color: red;
+    text-decoration: none;
+    display: block;
+    width: 150px;
+}
 
 .main_tab ul a:link, .main_tab a:visited{
     color:black;
