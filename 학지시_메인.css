@@ -140,27 +140,40 @@ footer ul a:hover{
     height: 50px;
     box-sizing: border-box;
     text-align: center;
-    padding-top: 6px;  
-    }
-
-.navi_inner li{
-    color: black;
-    text-decoration: none;
-    display: block;
-    width: 150px;
-    
+    padding-top: 6px;
+    z-index: 15;
+    position: relative; 
 }
 
+.navi ul a:link{
+    display: block;
+}
 
 .navi_inner{
     position: absolute;
+    background-color: #fff;
+    z-index: 10;
+    opacity: 0;
+    width: 130px;
+    transition: all 0.6s;
+    height: 0px;
+    overflow: hidden;
+    top: 0px;
 }
 
-.navi_inner li:hover{
-    background-color: red;
+/* navi 탭 클릭 시, dropdown 메뉴 생성 */
+.navi li:hover .navi_inner{
+    opacity: 1;
+    top: 50px;
+    height: 150px;
+}
+
+.navi_inner li a:link{
+    color: black;
+    background-color: #fff;
     text-decoration: none;
     display: block;
-    width: 150px;
+    width: 130px;
 }
 
 .main_tab ul a:link, .main_tab a:visited{
@@ -185,17 +198,19 @@ footer ul a:hover{
     background-color: white;
 }
 
-a:hover{
+/* a:hover{
     background-color: #D5D5D5;
     color:black;
-}
+} */
 
+/* hover for top_bar */
 nav div a:hover{
     background-color: white;
     color:black;
     text-decoration: underline;
 }
 
+/* link & visited for top_bar */
 div a:link, a:visited{
     color:black;
     text-decoration: none;
