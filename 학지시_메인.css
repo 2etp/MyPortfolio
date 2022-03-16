@@ -147,6 +147,7 @@ footer ul a:hover{
 
 .navi ul a:link{
     display: block;
+    
 }
 
 .navi_inner{
@@ -159,6 +160,7 @@ footer ul a:hover{
     height: 0px;
     overflow: hidden;
     top: 0px;
+    line-height: 30px;    
 }
 
 /* navi 탭 클릭 시, dropdown 메뉴 생성 */
@@ -173,7 +175,7 @@ footer ul a:hover{
     background-color: #fff;
     text-decoration: none;
     display: block;
-    width: 130px;
+    width: 130px;   
 }
 
 .main_tab ul a:link, .main_tab a:visited{
