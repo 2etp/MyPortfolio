@@ -170,6 +170,7 @@ footer ul a:hover{
     border-bottom: 1px solid #eeeeee; 
     width: 170px;
     padding: 0px;
+    margin-left: -40px;
 }
 
 /* navi 탭 클릭 시, dropdown 메뉴 생성 */
