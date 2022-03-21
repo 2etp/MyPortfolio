@@ -3,10 +3,20 @@ html{
     margin: 0;
 }
 
+table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    width: 550px;
+    height: 50px;
+    line-height: 12px;
+}
+
 body:not(footer){
     color: #5f5f5f;
     font-size: 13px;
 }
+
 .top_bar{
     font-size: 11px;
     float: right;
@@ -58,15 +68,6 @@ body:not(footer){
 .main_bar2 a:hover{
     text-decoration: underline;
     background-color: #f7f8fa;
-}
-
-table, th, td{
-        border: 1px solid white;
-        border-collapse: collapse;
-        text-align: center;
-        width: 550px;
-        height: 50px;
-        line-height: 12px;
 }
 
 .service{
@@ -130,7 +131,6 @@ footer ul a:hover{
 .navi ul li{
     color:black;
     text-decoration: none;
-    /* display: block; */
     background-color: #fff;
     border-left: 1px solid #eeeeee; 
     border-bottom: 1px solid #eeeeee; 
@@ -158,8 +158,7 @@ footer ul a:hover{
     transition: all 0.6s;
     height: 0px;
     overflow: hidden;
-    top: 0px;
-    
+    top: 0px;   
 }
 
 .navi>ul>li{
@@ -170,6 +169,7 @@ footer ul a:hover{
     border-bottom: 1px solid #eeeeee; 
     width: 170px;
     padding: 0px;
+    margin-left: -40px;
 }
 
 /* navi 탭 클릭 시, dropdown 메뉴 생성 */
@@ -204,16 +204,17 @@ footer ul a:hover{
     line-height: 50px;
     }
 
+.main_tab ul li{
+    float: left;
+    list-style: none;
+}
+
+
 .first_tab li a:link, .first_tab a:visited{
     border-top: 2px solid #427fc2; 
     border-bottom: none;
     background-color: white;
 }
-
-/* a:hover{
-    background-color: #D5D5D5;
-    color:black;
-} */
 
 /* hover for top_bar */
 nav div a:hover{
@@ -240,10 +241,15 @@ tr[title |= li]{
     background-color: #EAEAEA;
 }
 
-ul.marker{
+.marker li{
     list-style-image: url("image/marker.jpg");
     line-height: 25px;
+}
 
+div.marker{
+    float: left; 
+    margin-left: 90px; 
+    margin-bottom: 20px;
 }
 
 .footer_add{
