@@ -187,8 +187,14 @@ footer ul a:hover{
     margin-left: 15px;
 }
 
+/* navi 탭 메뉴의 영문 스타일 */
+.navi ul li span{
+    font-size: 11px; 
+    color: #ABABAB;
+}
+
 /* 메인탭(공지사항 ~ 학사일정) */
-.main_tab ul a:link, .main_tab a:visited{
+.main_tab ul a:not(.mainTab_plus){
     color:black;
     text-decoration: none;
     display: block;
@@ -209,8 +215,23 @@ footer ul a:hover{
     list-style: none;
 }
 
+.mainTab_plus {
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F6F6F6;
+    width: 60px; 
+    /* width: 96.6px; */
+    height: 50px;
+    border: 1px solid #ccc;
+    color: #1980B6; 
+    line-height: 40px;
+    font-size: 30px;
+    box-sizing: border-box;
+}
 
-.first_tab li a:link, .first_tab a:visited{
+
+.first_tab li a{
     border-top: 2px solid #427fc2; 
     border-bottom: none;
     background-color: white;
@@ -224,7 +245,7 @@ nav div a:hover{
 }
 
 /* link & visited for top_bar */
-div a:link, a:visited{
+nav a:link, nav a:visited{
     color:black;
     text-decoration: none;
 }
