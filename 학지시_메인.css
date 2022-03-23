@@ -208,7 +208,7 @@ footer ul a:hover{
     box-sizing: border-box;
     text-align: center;
     line-height: 50px;
-    }
+}
 
 .main_tab ul li{
     float: left;
@@ -221,7 +221,6 @@ footer ul a:hover{
     text-decoration: none;
     background-color: #F6F6F6;
     width: 60px; 
-    /* width: 96.6px; */
     height: 50px;
     border: 1px solid #ccc;
     color: #1980B6; 
@@ -231,10 +230,11 @@ footer ul a:hover{
 }
 
 
-.first_tab li a{
+.first_tab li a:link{
     border-top: 2px solid #427fc2; 
     border-bottom: none;
     background-color: white;
+    
 }
 
 /* hover for top_bar */
