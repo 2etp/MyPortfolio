@@ -3,6 +3,10 @@ html{
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+    color: #000;
+}
 table, th, td{
     border: 1px solid white;
     border-collapse: collapse;
@@ -62,7 +66,9 @@ body:not(footer){
     line-height: 60px;
     border-top: 1px solid #D5D5D5;
     border-right: 1px solid #D5D5D5;
-    border-bottom: 1px solid #D5D5D5;  
+    border-bottom: 1px solid #D5D5D5; 
+    text-decoration: none;
+
 }
 
 .main_bar2 a:hover{
@@ -93,7 +99,6 @@ body:not(footer){
     line-height: 12px;
     margin-top: 25px;
     font-size: 13px;
-
 }
 
 .footer_menu{
@@ -200,7 +205,7 @@ footer ul a:hover{
     display: block;
     background-color: #F6F6F6;
     border-left: 1px solid #ccc;  
-    border-top: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc; 
     font-size: 15px;
     width: 96.6px;
@@ -209,6 +214,13 @@ footer ul a:hover{
     text-align: center;
     line-height: 50px;
 }
+
+.main_tab ul li:first-child a:not(.mainTab_plus){
+    border-top: 2px solid #427fc2; 
+    border-bottom: none;
+    background-color: white;
+}
+
 
 .main_tab ul li{
     float: left;
@@ -229,13 +241,12 @@ footer ul a:hover{
     box-sizing: border-box;
 }
 
-
-.first_tab li a:link{
+/* .first_tab {
     border-top: 2px solid #427fc2; 
     border-bottom: none;
     background-color: white;
-    
-}
+} */
+
 
 /* hover for top_bar */
 nav div a:hover{
