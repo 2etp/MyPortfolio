@@ -147,7 +147,6 @@ footer ul a:hover{
     padding-top: 6px;
     z-index: 15;
     position: relative;
-    margin-left: -1px;
 }
 
 .navi ul a:link :not(.navi_inner a:link){
@@ -215,6 +214,7 @@ footer ul a:hover{
     line-height: 50px;
 }
 
+/* 메인탭의 첫 번째 파트의 기본 스타일 지정 */
 .main_tab ul li:first-child a:not(.mainTab_plus){
     border-top: 2px solid #427fc2; 
     border-bottom: none;
@@ -240,13 +240,6 @@ footer ul a:hover{
     font-size: 30px;
     box-sizing: border-box;
 }
-
-/* .first_tab {
-    border-top: 2px solid #427fc2; 
-    border-bottom: none;
-    background-color: white;
-} */
-
 
 /* hover for top_bar */
 nav div a:hover{
@@ -285,7 +278,6 @@ div.marker{
 }
 
 .footer_add{
-    width: 1200px;
     margin-left: 385px;
     padding-top: 5px;
     display: block;
