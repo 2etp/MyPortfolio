@@ -186,3 +186,18 @@ function showSlides(n) {
   
     slides1[n].style.display = "block";
   }
+
+  let acc = document.getElementsByClassName("navi");
+  
+  for(let i = 0; i < acc.length; ++i){
+    acc[i].addEventListener("mouseover", function(){
+      this.classList.toggle("active");
+      let navi_inner = this.nextElementSibling;
+      if(navi_inner.style.maxHeight) {
+         navi_inner.style.maxHeight = null;
+      
+    }else {
+      navi_inner.style.maxHeight =navi_inner.scrollHeight + "px";
+    } 
+    });
+  }

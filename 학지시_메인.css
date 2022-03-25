@@ -160,9 +160,8 @@ footer ul a:hover{
     opacity: 0;
     width: 130px;
     transition: all 0.6s;
-    height: 0px;
     overflow: hidden;
-    top: 0px;   
+    
 }
 
 .navi>ul>li{
@@ -176,7 +175,7 @@ footer ul a:hover{
     margin-left: -40px;
 }
 
-/* navi 탭 클릭 시, dropdown 메뉴 생성 */
+/* navi 탭 hover 할 때, dropdown 메뉴 생성 */
 .navi li:hover .navi_inner{
     opacity: 1;
     top: 50px;
