@@ -3,10 +3,11 @@ html{
     margin: 0;
 }
 
-a{
+a:not(.service a){
     text-decoration: none;
     color: #000;
 }
+
 table, th, td{
     border: 1px solid white;
     border-collapse: collapse;
@@ -79,7 +80,7 @@ body:not(footer){
 .service{
     color: white;
     font-weight: bold;
-    background-color: #2088c4;
+    background-color: #3482ca;
     display: inline-block;
     width: 450px;
     height: 100px;
@@ -87,6 +88,15 @@ body:not(footer){
     line-height: 20px;
     font-size: 12px;
     margin-left: 50px;
+}
+
+.service a{
+    color: white;
+    text-decoration: none;
+}
+
+.service>ul>li:hover{
+    text-decoration: underline;
 }
 
 .main_table{
