@@ -1,0 +1,456 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+a:not(.service a){
+    text-decoration: none;
+    color: #000;
+}
+
+table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    width: 550px;
+    height: 50px;
+    line-height: 12px;
+}
+
+body:not(footer){
+    color: #5f5f5f;
+    font-size: 13px;
+}
+
+.top_bar{
+    font-size: 11px;
+    float: right;
+}
+
+
+.log_in{
+    background-color: #F6F6F6;
+    width: 420px;
+    height: 100px;
+    padding: 20px;
+    line-height: 2px;
+    float: left;
+    margin-left: 90px;
+}
+
+#signup label{
+    float: left;
+    width: 100px;
+    margin-top: 10px;
+}
+    
+.main_bar1{
+    color: white; 
+    font-weight: bold; 
+    background-color: #3482ca;
+    font-size: 16px;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    float: left;
+    margin-left: 40px;
+}
+
+.main_bar2{
+    color: #636a74;
+    background-color: #f7f8fa;
+    font-size: 16px;
+    width: 909px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5; 
+    text-decoration: none;
+
+}
+
+.main_bar2 a:hover{
+    text-decoration: underline;
+    background-color: #f7f8fa;
+}
+
+.service{
+    color: white;
+    font-weight: bold;
+    background-color: #3482ca;
+    display: inline-block;
+    width: 450px;
+    height: 100px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 50px;
+}
+
+.service a{
+    color: white;
+    text-decoration: none;
+}
+
+.service>ul>li:hover{
+    text-decoration: underline;
+}
+
+.main_table{
+    text-align: center;
+    width: 220px;
+    height: 90px;
+    margin-left: 10px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    line-height: 12px;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.footer_menu{
+    margin-right: 20px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+footer ul a:hover{
+    background-color: #f5f5f5;
+    color:black;
+    text-decoration: underline;
+}
+
+.footerMenu_style{
+    list-style-type: none;
+    margin-bottom: -18px;
+}
+
+.web_size{
+    width: 1200px;
+    margin: auto;
+}
+
+.mainTab_float{
+    float: left;
+}
+
+.img1{
+    float: left;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.navi ul li{
+    color:black;
+    text-decoration: none;
+    background-color: #fff;
+    border-left: 1px solid #eeeeee; 
+    border-bottom: 1px solid #eeeeee; 
+    font-size: 14px;
+    width: 96.6px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 6px;
+    z-index: 15;
+    position: relative;
+}
+
+.navi ul a:link{
+    display: block;
+}
+
+.navi_inner{
+    position: absolute;
+    background-color: #fff;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.4s;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.navi>ul>li{
+    float: left;
+}
+
+/* Dropdown Menu의 세부 스타일 적용 */
+.navi .navi_inner li{
+    border-bottom: 1px solid #eeeeee; 
+    width: 200px;
+    padding: 0px;
+    margin-left: -40px;
+    font-size: 12px;
+    height: 40px;
+}
+
+/* navi 탭 hover 할 때, dropdown 메뉴 생성 */
+.navi li:hover .navi_inner{
+    opacity: 1;
+    top: 50px;
+    max-height: 1000px;
+}
+
+.navi_inner li a:link{
+    text-decoration: none;
+    line-height: 40px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+/* navi 탭 메뉴의 영문 스타일 */
+.navi ul li span{
+    font-size: 11px; 
+    color: #ABABAB;
+}
+
+/* 메인탭(공지사항 ~ 학사일정) */
+.main_tab ul a:not(.mainTab_plus){
+    color:black;
+    text-decoration: none;
+    display: block;
+    background-color: #F6F6F6;
+    border-left: 1px solid #ccc;  
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; 
+    font-size: 15px;
+    width: 96.6px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* 메인탭의 첫 번째 파트의 기본 스타일 지정 */
+.main_tab ul li:first-child a:not(.mainTab_plus){
+    border-top: 2px solid #427fc2; 
+    border-bottom: none;
+    background-color: white;
+}
+
+.main_tab ul li{
+    float: left;
+    list-style: none;
+}
+
+.mainTab_plus {
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F6F6F6;
+    width: 60px; 
+    height: 50px;
+    border: 1px solid #ccc;
+    color: #1980B6; 
+    line-height: 40px;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+/* hover for top_bar */
+nav div a:hover{
+    background-color: white;
+    color:black;
+    text-decoration: underline;
+}
+
+/* link & visited for top_bar */
+nav a:link, nav a:visited{
+    color:black;
+    text-decoration: none;
+}
+
+tr a:hover{
+    text-decoration: underline;
+}
+
+tr[title |= de]{
+    background-color: #D5D5D5;
+}
+
+tr[title |= li]{
+    background-color: #EAEAEA;
+}
+
+.marker li{
+    list-style-image: url("image/marker.jpg");
+    line-height: 25px;
+}
+
+div.marker{
+    float: left; 
+    margin-left: 90px; 
+    margin-bottom: 20px;
+}
+
+.footer_add{
+    margin-left: 385px;
+    padding-top: 5px;
+    display: block;
+    height: 100px;
+}
+
+/* Slideshow container */
+.slideshow-container{
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
+}
+
+.slideshow-container .mySlides img{
+    height: 250px;
+}
+
+/* Hide the images by default */
+.mySlides{
+    display: none;
+}
+
+.mySlides1{
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    width: auto;
+    /* margin-top: -22px; */
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.8s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next{
+    right: -520px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev{
+    left: 50px;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: gray;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0px;
+    left: 35px;
+    text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: 260px;
+    right: 580px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* 아래 3개의 클래스는 첫 번째 메인탭 클릭 시 해당 자료 띄우는 기능 */
+.maintab_list1{
+    position: absolute;
+    top: 620px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 1;
+}
+
+.maintab_list2{
+    position: absolute;
+    top: 620px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 0;
+}
+
+.maintab_list3{
+    position: absolute;
+    top: 620px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 0;
+}
+
+/* 아래 3개의 클래스는 두 번째 메인탭 클릭 시 해당 자료 띄우는 기능 */
+.maintab_list4{
+    position: absolute;
+    top: 870px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 1;
+}
+
+.maintab_list5{
+    position: absolute;
+    top: 870px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 0;
+}
+
+.maintab_list6{
+    position: absolute;
+    top: 870px;
+    width: 500px;
+    height: 130px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10;
+    opacity: 0;
+}
