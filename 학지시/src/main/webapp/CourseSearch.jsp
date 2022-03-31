@@ -1,5 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	
+	Connection conn = null;
+	
+	Statement stmt = null;
+	
+	ResultSet rs = null;
+	
+	String Native = "";
+	String Grade = ""; 
+	String CourseType = "";
+	String CourseCode = ""; 
+	String Section = ""; 
+	double Credit = 0;
+	String Number = "";
+	String CourseTitle = ""; 
+	String ProfName = "";
+	String ClassSchedule = "";
+	String Others = "";
+		     
+	// 레코드가 몇 개인지 카운팅
+	int counter = 0;
+	try {
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
+		stmt = conn.createStatement();//Statement 생성
+		rs = stmt.executeQuery("select * from course_search"); //질의실행결과를 ResultSet에 담는다.
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,72 +92,64 @@
                 <td>강의시간/강의실</td>
                 <td>비고</td>
             </tr>
-            <tr>
-                <td> </td>
-                <td>1</td>
-                <td>전공필수</td>
-                <td><a href="#" onClick="CourseCart.jsp?code=AS202224">AS202224</a></td>
-                <td>040</td>
-                <td>3.0</td>
-                <td>55 / 60</td>
-                <td>제조공학및실습(산업공학과, 510-1791)</td>
-                <td>목학수</td>
-                <td>월수</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td>2</td>
-                <td>전공필수</td>
-                <td><a href="#">BS202224</a></td>
-                <td>041</td>
-                <td>3.0</td>
-                <td>56 / 60</td>
-                <td>작업설계및분석(산업공학과, 510-1791)</td>
-                <td>진상은</td>
-                <td>화목</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td>1</td>
-                <td>전공기초</td>
-                <td><a href="#">CS202224</a></td>
-                <td>042</td>
-                <td>3.0</td>
-                <td>57 / 60</td>
-                <td>공업수학(산업공학과, 510-1791)</td>
-                <td>송우진</td>
-                <td>월수</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td>3</td>
-                <td>전공선택</td>
-                <td><a href="#">DS202224</a></td>
-                <td>043</td>
-                <td>3.0</td>
-                <td>58 / 60</td>
-                <td>확률과정론(산업공학과, 510-1791)</td>
-                <td>윤원영</td>
-                <td>화목</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td>4</td>
-                <td>전공선택</td>
-                <td><a href="#">ES202224</a></td>
-                <td>044</td>
-                <td>3.0</td>
-                <td>59 / 60</td>
-                <td>인공지능(산업공학과, 510-1791)</td>
-                <td>배혜림</td>
-                <td>월수</td>
-                <td> </td>
-            </tr>
+            
+             <%
+            	/* String Code = request.getParameter() */
+            	if(rs != null) {
+            	
+            		while (rs.next()) {
+            			Native = rs.getString("Native");
+            			Grade = rs.getString("Grade");
+            			CourseType = rs.getString("CourseType");
+            			CourseCode = rs.getString("CourseCode");
+            			Section = rs.getString("Section");
+            			Credit = rs.getDouble("Credit");
+            			Number = rs.getString("Number");
+            			CourseTitle = rs.getString("CourseTitle");
+            			ProfName = rs.getString("ProfName");
+            			ClassSchedule = rs.getString("ClassSchedule");
+            			Others = rs.getString("Others");
+         
+            %>
+            
+             <tr>
+                <td><%=Native%></td>
+                <td><%=Grade%></td>
+                <td><%=CourseType%></td>
+                <td><a href="#"><%=CourseCode%></a></td>
+                <td><%=Section%></td>
+                <td><%=Credit%></td>
+                <td><%=Number%></td>
+                <td><%=CourseTitle%></td>
+                <td><%=ProfName%></td>
+                <td><%=ClassSchedule%></td>
+                <td><%=Others%></td>              
+            <%
+                	}
+           	 	}
+            %>
+              </tr>        
         </table>
     </div>
+    
+	  <%
+			} catch (SQLException sqlException) {
+		    			System.out.println("sql exception: " + sqlException.getMessage());
+    		} catch (Exception exception) {
+    			System.out.println("exception");
+    		} finally {
+    			// close는 생성의 역순으로 처리!!!
+    			if (rs != null)
+    				try {rs.close();} 
+    				catch (SQLException ex) {}
+    			if (stmt != null)
+    				try {stmt.close();} 
+    				catch (SQLException ex) {}
+    			if (conn != null)
+    				try {conn.close();} 
+    				catch (Exception ex) {}
+    		}
+	          
+	  	%>
 </body>
 </html>

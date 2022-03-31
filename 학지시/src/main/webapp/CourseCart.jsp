@@ -21,9 +21,9 @@
 	// 레코드가 몇 개인지 카운팅
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/lecture", "root", "1234");//Connection 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
-		rs = stmt.executeQuery("select * from lecture_info"); //질의실행결과를 ResultSet에 담는다.
+		rs = stmt.executeQuery("select * from course_cart"); //질의실행결과를 ResultSet에 담는다.
 %>
 
 <!DOCTYPE html>
@@ -34,12 +34,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>희망과목담기</title>
     <link rel="stylesheet" href="CourseCart.css">
-    
-    <!-- <script type="text/javascript">
-    function popUp() {
-        window.open("CourseSearch.jsp", "subjectSearch", "width=1000px, height=900px, left=200px, top=100px");
-    }
-    </script> -->
 </head>
 
 <body>
