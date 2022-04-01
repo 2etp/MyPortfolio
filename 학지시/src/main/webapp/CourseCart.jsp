@@ -23,7 +23,7 @@
 	try {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
-		rs = stmt.executeQuery("select * from course_cart"); //질의실행결과를 ResultSet에 담는다.
+		rs = stmt.executeQuery("select * from course_cart "); //질의실행결과를 ResultSet에 담는다.
 %>
 
 <!DOCTYPE html>
@@ -127,7 +127,7 @@
             </tr>
             
             <%
-            	/* String Code = request.getParameter() */
+            	String Code = request.getParameter("code");
             	if(rs != null) {
             	
             		while (rs.next()) {

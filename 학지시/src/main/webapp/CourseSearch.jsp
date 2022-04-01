@@ -116,7 +116,7 @@
                 <td><%=Native%></td>
                 <td><%=Grade%></td>
                 <td><%=CourseType%></td>
-                <td><a href="#"><%=CourseCode%></a></td>
+                <td><a href="#" onClick="CourseCart.jsp?code=CourseCode"><%=CourseCode%></a></td>
                 <td><%=Section%></td>
                 <td><%=Credit%></td>
                 <td><%=Number%></td>
