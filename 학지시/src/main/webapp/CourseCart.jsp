@@ -57,13 +57,13 @@
         <table>
             <tr class="info_odd info_even">
                 <td>학번<br> Student ID</td>
-                <td>202237543</td>
+                <td>201827544</td>
                 <td>성명<br> Name</td>
-                <td>카카오톡</td>
+                <td>최낙원</td>
                 <td>학과(부)<br> Department</td>
                 <td>공과대학</td>
                 <td>전공<br> Major</td>
-                <td colspan="3">채팅학과</td>
+                <td colspan="3">산업공학과</td>
             </tr>
             <tr class="info_odd info_even">
                 <td>학년<br> Grade</td>
@@ -71,7 +71,7 @@
                 <td>학적상태<br> Academic States</td>
                 <td>재학</td>
                 <td>교육과정적용년도<br> Admission Year</td>
-                <td>2021년도</td>
+                <td>2017년도</td>
                 <td>학점<br> Credits</td>
                 <td colspan="3">4.5</td>
             </tr>
