@@ -177,7 +177,7 @@ footer ul a:hover{
     float: left;
 }
 
-/* Dropdown Menuì˜ ì„¸ë¶€ ìŠ¤íƒ€ì¼ ì ìš© */
+/* Dropdown MenuÀÇ ¼¼ºÎ ½ºÅ¸ÀÏ Àû¿ë */
 .navi .navi_inner li{
     border-bottom: 1px solid #eeeeee; 
     width: 200px;
@@ -187,7 +187,7 @@ footer ul a:hover{
     height: 40px;
 }
 
-/* navi íƒ­ hover í•  ë•Œ, dropdown ë©”ë‰´ ìƒì„± */
+/* navi ÅÇ hover ÇÒ ¶§, dropdown ¸Ş´º »ı¼º */
 .navi li:hover .navi_inner{
     opacity: 1;
     top: 50px;
@@ -201,13 +201,13 @@ footer ul a:hover{
     margin-left: 15px;
 }
 
-/* navi íƒ­ ë©”ë‰´ì˜ ì˜ë¬¸ ìŠ¤íƒ€ì¼ */
+/* navi ÅÇ ¸Ş´ºÀÇ ¿µ¹® ½ºÅ¸ÀÏ */
 .navi ul li span{
     font-size: 11px; 
     color: #ABABAB;
 }
 
-/* ë©”ì¸íƒ­(ê³µì§€ì‚¬í•­ ~ í•™ì‚¬ì¼ì •) */
+/* ¸ŞÀÎÅÇ(°øÁö»çÇ× ~ ÇĞ»çÀÏÁ¤) */
 .main_tab ul a:not(.mainTab_plus){
     color:black;
     text-decoration: none;
@@ -224,7 +224,7 @@ footer ul a:hover{
     line-height: 50px;
 }
 
-/* ë©”ì¸íƒ­ì˜ ì²« ë²ˆì§¸ íŒŒíŠ¸ì˜ ê¸°ë³¸ ìŠ¤íƒ€ì¼ ì§€ì • */
+/* ¸ŞÀÎÅÇÀÇ Ã¹ ¹øÂ° ÆÄÆ®ÀÇ ±âº» ½ºÅ¸ÀÏ ÁöÁ¤ */
 .main_tab ul li:first-child a:not(.mainTab_plus){
     border-top: 2px solid #427fc2; 
     border-bottom: none;
@@ -393,7 +393,7 @@ div.marker{
     to {opacity: 1}
 }
 
-/* ì•„ë˜ 3ê°œì˜ í´ë˜ìŠ¤ëŠ” ì²« ë²ˆì§¸ ë©”ì¸íƒ­ í´ë¦­ ì‹œ í•´ë‹¹ ìë£Œ ë„ìš°ëŠ” ê¸°ëŠ¥ */
+/* ¾Æ·¡ 3°³ÀÇ Å¬·¡½º´Â Ã¹ ¹øÂ° ¸ŞÀÎÅÇ Å¬¸¯ ½Ã ÇØ´ç ÀÚ·á ¶ç¿ì´Â ±â´É */
 .maintab_list1{
     position: absolute;
     top: 620px;
@@ -424,7 +424,7 @@ div.marker{
     opacity: 0;
 }
 
-/* ì•„ë˜ 3ê°œì˜ í´ë˜ìŠ¤ëŠ” ë‘ ë²ˆì§¸ ë©”ì¸íƒ­ í´ë¦­ ì‹œ í•´ë‹¹ ìë£Œ ë„ìš°ëŠ” ê¸°ëŠ¥ */
+/* ¾Æ·¡ 3°³ÀÇ Å¬·¡½º´Â µÎ ¹øÂ° ¸ŞÀÎÅÇ Å¬¸¯ ½Ã ÇØ´ç ÀÚ·á ¶ç¿ì´Â ±â´É */
 .maintab_list4{
     position: absolute;
     top: 870px;

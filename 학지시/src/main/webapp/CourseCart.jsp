@@ -1,3 +1,31 @@
+<%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	
+	Connection conn = null;
+	
+	Statement stmt = null;
+	
+	ResultSet rs = null;
+	
+	String Group = "";
+	String CourseType = ""; 
+	String CourseCode = ""; 
+	String CourseTitle = ""; 
+	String Section = ""; 
+	double Credit = 0;  
+	String ClassSchedule = "";
+	String Others = "";
+		     
+	// 레코드가 몇 개인지 카운팅
+	int counter = 0;
+	try {
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
+		stmt = conn.createStatement();//Statement 생성
+		rs = stmt.executeQuery("select * from course_cart "); //질의실행결과를 ResultSet에 담는다.
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +33,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>희망과목담기</title>
-    <link rel="stylesheet" href="희망과목담기.css">
+    <link rel="stylesheet" href="CourseCart.css">
 </head>
 
 <body>
@@ -29,13 +57,13 @@
         <table>
             <tr class="info_odd info_even">
                 <td>학번<br> Student ID</td>
-                <td>202237543</td>
+                <td>201827544</td>
                 <td>성명<br> Name</td>
-                <td>카카오톡</td>
+                <td>최낙원</td>
                 <td>학과(부)<br> Department</td>
                 <td>공과대학</td>
                 <td>전공<br> Major</td>
-                <td colspan="3">채팅학과</td>
+                <td colspan="3">산업공학과</td>
             </tr>
             <tr class="info_odd info_even">
                 <td>학년<br> Grade</td>
@@ -43,7 +71,7 @@
                 <td>학적상태<br> Academic States</td>
                 <td>재학</td>
                 <td>교육과정적용년도<br> Admission Year</td>
-                <td>2021년도</td>
+                <td>2017년도</td>
                 <td>학점<br> Credits</td>
                 <td colspan="3">4.5</td>
             </tr>
@@ -73,7 +101,7 @@
                 <td style="width: 820px;" class="subjectsearch">
                     <button type="submit" style="float: left;">희망과목담기 register</button>
                     <button type="submit" style="float: left;">지우기 Delete</button>
-                    <button type="button" onclick="popUp();" 
+                    <button type="button" onClick="popUp()" 
                         style="float: left;">교과목검색 Search Courses</button>
                     <button type="submit" style="float: left;">교과목검색(상세) Search Courses(Details)</button><br>
                     <button type="submit" style="clear: left; float: left;">로그아웃 Log-out</button>
@@ -97,19 +125,61 @@
                 <td>시간표요약정보 <br>Class Schedule</td>
                 <td>비고 <br>Others</td>
             </tr>
+            
+            <%
+            	String Code = request.getParameter("code");
+            	if(rs != null) {
+            	
+            		while (rs.next()) {
+            			Group = rs.getString("Grouping");
+            			CourseType = rs.getString("CourseType");
+            			CourseCode = rs.getString("CourseCode");
+            			CourseTitle = rs.getString("CourseTitle");
+            			CourseType = rs.getString("CourseType");
+            			Section = rs.getString("Section");
+            			Credit = rs.getDouble("Credit");
+            			ClassSchedule = rs.getString("ClassSchedule");
+            			Others = rs.getString("Others");
+         
+            %>
             <tr>
-                <td></td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
+                <td><%=Group%></td>
+                <td><%=CourseType%></td>
+                <td><%=CourseCode%></td>
+                <td><%=CourseTitle%></td>
+                <td><%=Section%></td>
+                <td><%=Credit%></td>
                 <td><button type="submit">신청</button></td>
-                <td> </td>
-                <td> </td>
-            </tr>
+                <td><%=ClassSchedule%></td>
+                <td><%=Others%></td>
+            <%
+                	}
+           	 	}
+            %>
+            </tr>          
         </table>
     </div>
-    <script src="교과목검색.js"></script>
+    
+    <%
+			} catch (SQLException sqlException) {
+      			System.out.println("sql exception: " + sqlException.getMessage());
+      		} catch (Exception exception) {
+      			System.out.println("exception");
+      		} finally {
+      			// close는 생성의 역순으로 처리!!!
+      			if (rs != null)
+      				try {rs.close();} 
+      				catch (SQLException ex) {}
+      			if (stmt != null)
+      				try {stmt.close();} 
+      				catch (SQLException ex) {}
+      			if (conn != null)
+      				try {conn.close();} 
+      				catch (Exception ex) {}
+      		}
+            
+    	%>
+    	
+    	<script src="./CourseSearch.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산대학교 학생지원시스템</title>
-    <link rel="stylesheet" href="학지시_메인.css">
+    <link rel="stylesheet" href="MainPage.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
@@ -193,12 +195,12 @@
 
             <div class="mySlides fade">
                 <!-- <div class="numbertext">2 / 3</div> -->
-                <img src="image/부산대_본부.jfif" style="width: 600px; height: 250px;" class="img1">              
+                <img src="image/head.jfif" style="width: 600px; height: 250px;" class="img1">              
             </div>
 
             <div class="mySlides fade">
                 <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="image/부산대_전경.jpg" style="width: 600px; height: 250px;" class="img1">            
+                <img src="image/view.jpg" style="width: 600px; height: 250px;" class="img1">            
             </div>
 
             <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
@@ -438,6 +440,6 @@
         <div class="footer_add">Copyright 2016 Pusan National University. All rights reserved.<br><br><br><br></div>
     </div>
 
-    <script src="학지시_메인.js"></script>
+    <script src="MainPage.js"></script>
 </body>
 </html>
