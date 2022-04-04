@@ -17,13 +17,13 @@
 	double Credit = 0;  
 	String ClassSchedule = "";
 	String Others = "";
-		     
+	String Code = "${param.code}";
 	// 레코드가 몇 개인지 카운팅
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266");//Connection 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
-		rs = stmt.executeQuery("select * from course_cart "); //질의실행결과를 ResultSet에 담는다.
+		rs = stmt.executeQuery("select * from course_cart where CourseCode = 'Code'"); //질의실행결과를 ResultSet에 담는다.
 %>
 
 <!DOCTYPE html>
@@ -127,7 +127,7 @@
             </tr>
             
             <%
-            	String Code = request.getParameter("code");
+            	
             	if(rs != null) {
             	
             		while (rs.next()) {
