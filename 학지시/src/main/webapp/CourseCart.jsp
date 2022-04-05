@@ -17,13 +17,25 @@
 	double Credit = 0;  
 	String ClassSchedule = "";
 	String Others = "";
-	String Code = "${param.code}";
+	/* String Code = request.getParameter("code"); */
+	
+	String Code = "";
+	Cookie[] cookies = request.getCookies();
+	if(cookies != null) {
+		for(int i = 0; i < cookies.length; ++i){
+			if(cookies[i].getName().equals("myCookie")){
+				Code = cookies[i].getValue();
+			}
+		}
+	}
+	
 	// 레코드가 몇 개인지 카운팅
 	int counter = 0;
 	try {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
-		rs = stmt.executeQuery("select * from course_cart where CourseCode = 'Code'"); //질의실행결과를 ResultSet에 담는다.
+		String sql = "select * from course_cart where CourseCode = " + <%=Code%>;
+		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
 %>
 
 <!DOCTYPE html>
@@ -110,7 +122,8 @@
         </table>
     </div>
 
-    <h4 style="color: blue; margin-bottom: 3px;">희망과목담기 내역(Details of Adding Courses)</h4> 
+    <h4 style="color: blue; margin-bottom: 3px;">희망과목담기 내역(Details of Adding Courses)</h4>
+    <h2><%=Code%></h2>
 
     <div class="main_contents">
         <table>

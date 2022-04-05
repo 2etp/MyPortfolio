@@ -20,6 +20,8 @@
 	String ProfName = "";
 	String ClassSchedule = "";
 	String Others = "";
+	
+	
 		     
 	// 레코드가 몇 개인지 카운팅
 	int counter = 0;
@@ -115,15 +117,22 @@
                 <td><%=Native%></td>
                 <td><%=Grade%></td>
                 <td><%=CourseType%></td>
-                <td><a href="#" onClick="CourseCart.jsp?code=<%=CourseCode%>"><%=CourseCode%></a></td>
+                <td><a href="#" onClick="codeCheck()"><%=CourseCode%></a></td>
                 <td><%=Section%></td>
                 <td><%=Credit%></td>
                 <td><%=Number%></td>
                 <td><%=CourseTitle%></td>
                 <td><%=ProfName%></td>
                 <td><%=ClassSchedule%></td>
-                <td><%=Others%></td>              
+                <td><%=Others%></td>
+                              
             <%
+            
+	        	String cookieName = "myCookie";
+	        	Cookie cookie = new Cookie(cookieName, "Apple");
+	        	cookie.setMaxAge(300);
+	        	cookie.setValue(CourseCode);
+	        	response.addCookie(cookie);
                 	}
            	 	}
             %>
