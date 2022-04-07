@@ -34,7 +34,7 @@
 	try {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
-		String sql = "select * from course_cart where CourseCode = " + <%=Code%>;
+		String sql = "select * from course_cart where CourseCode = '" + <%=Code%> + "'";
 		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
 %>
 
