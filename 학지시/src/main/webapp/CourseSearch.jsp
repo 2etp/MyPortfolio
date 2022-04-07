@@ -9,24 +9,24 @@
 	
 	ResultSet rs = null;
 	
-	String Native = "";
-	String Grade = ""; 
-	String CourseType = "";
-	String CourseCode = ""; 
-	String Section = ""; 
-	double Credit = 0;
-	String Number = "";
-	String CourseTitle = ""; 
-	String ProfName = "";
-	String ClassSchedule = "";
-	String Others = "";
+	String language = "";
+	String grade = ""; 
+	String courseType = "";
+	String courseCode = ""; 
+	String section = ""; 
+	double credit = 0;
+	String number = "";
+	String courseTitle = ""; 
+	String profName = "";
+	String classSchedule = "";
+	String others = "";
 	
 	
 		     
 	// 레코드가 몇 개인지 카운팅
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266");//Connection 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
 		rs = stmt.executeQuery("select * from course_search"); //질의실행결과를 ResultSet에 담는다.
 %>
@@ -99,43 +99,35 @@
             	if(rs != null) {
             	
             		while (rs.next()) {
-            			Native = rs.getString("Native");
-            			Grade = rs.getString("Grade");
-            			CourseType = rs.getString("CourseType");
-            			CourseCode = rs.getString("CourseCode");
-            			Section = rs.getString("Section");
-            			Credit = rs.getDouble("Credit");
-            			Number = rs.getString("Number");
-            			CourseTitle = rs.getString("CourseTitle");
-            			ProfName = rs.getString("ProfName");
-            			ClassSchedule = rs.getString("ClassSchedule");
-            			Others = rs.getString("Others");
+            			language = rs.getString("Native");
+            			grade = rs.getString("Grade");
+            			courseType = rs.getString("CourseType");
+            			courseCode = rs.getString("CourseCode");
+            			section = rs.getString("Section");
+            			credit = rs.getDouble("Credit");
+            			number = rs.getString("Number");
+            			courseTitle = rs.getString("CourseTitle");
+            			profName = rs.getString("ProfName");
+            			classSchedule = rs.getString("ClassSchedule");
+            			others = rs.getString("Others");
          
             %>
             
              <tr>
-                <td><%=Native%></td>
-                <td><%=Grade%></td>
-                <td><%=CourseType%></td>
-                <td><a href="#" onClick="codeCheck()"><%=CourseCode%></a></td>
-                <td><%=Section%></td>
-                <td><%=Credit%></td>
-                <td><%=Number%></td>
-                <td><%=CourseTitle%></td>
-                <td><%=ProfName%></td>
-                <td><%=ClassSchedule%></td>
-                <td><%=Others%></td>
-                              
-            <%
-           /*  public String codeCheck() {
-            	
-	        	String cookieName = "myCookie";
-	        	Cookie cookie = new Cookie(cookieName, "Apple");
-	        	cookie.setMaxAge(300);
-	        	cookie.setValue(CourseCode);
-	        	return response.addCookie(cookie);
-            } */
-            
+                <td><%=language%></td>
+                <td><%=grade%></td>
+                <td><%=courseType%></td>
+                <!-- 클릭 시, 교과목코드 쿠키 생성하는 js 코드 실행 -->
+                <td><a href="#" onClick="codeCheck('courseCode', '<%=courseCode%>')"><%=courseCode%></a></td>
+                <td><%=section%></td>
+                <td><%=credit%></td>
+                <td><%=number%></td>
+                <td><%=courseTitle%></td>
+                <td><%=profName%></td>
+                <td><%=classSchedule%></td>
+                <td><%=others%></td>
+                             
+            <%     
                 	}
            	 	}
             %>
@@ -162,5 +154,6 @@
     		}
 	          
 	  	%>
+	  	<script src="./CourseSearch.js"></script>
 </body>
 </html>

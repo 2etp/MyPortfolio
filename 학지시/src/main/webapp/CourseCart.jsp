@@ -9,36 +9,32 @@
 	
 	ResultSet rs = null;
 	
-	String Group = "";
-	String CourseType = ""; 
-	String CourseCode = ""; 
-	String CourseTitle = ""; 
-	String Section = ""; 
-	double Credit = 0;  
-	String ClassSchedule = "";
-	String Others = "";
-	/* String Code = request.getParameter("code"); */
-	
-	String Code = "";
+	String group = "";
+	String courseType = ""; 
+	String courseCode = ""; 
+	String courseTitle = ""; 
+	String section = ""; 
+	double credit = 0;  
+	String classSchedule = "";
+	String others = "";
+
+	// 교과목코드에 해당하는 쿠키 값 가져오기
+	String cCode = "";
 	Cookie[] cookies = request.getCookies();
-	if(cookies != null) {
-		for(int i = 0; i < cookies.length; ++i){
-			if(cookies[i].getName().equals("myCookie")){
-				Code = cookies[i].getValue();
-			}
-		}
+	for(Cookie c : cookies) {
+	  if("courseCode".equals(c.getName())){
+		  cCode = c.getValue();
+	  }
 	}
-	
+	 
 	// 레코드가 몇 개인지 카운팅
+
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266");//Connection 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
-<<<<<<< HEAD
-		String sql = "select * from course_cart where CourseCode = '" + <%=Code%> + "'";
-=======
-		String sql = "select * from course_cart where CourseCode = " + %><%=Code%><%;
->>>>>>> 84017fe038554cedb24b18ece4d7a5efa723c3f3
+		// CouseSearch.jsp에서 받아온 CourseCode를 쿼리문에 같이 입력
+		String sql = "select * from course_cart where CourseCode = \'" + cCode +"\';";
 		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
 %>
 
@@ -127,7 +123,6 @@
     </div>
 
     <h4 style="color: blue; margin-bottom: 3px;">희망과목담기 내역(Details of Adding Courses)</h4>
-    <h2><%=Code%></h2>
 
     <div class="main_contents">
         <table>
@@ -148,27 +143,27 @@
             	if(rs != null) {
             	
             		while (rs.next()) {
-            			Group = rs.getString("Grouping");
-            			CourseType = rs.getString("CourseType");
-            			CourseCode = rs.getString("CourseCode");
-            			CourseTitle = rs.getString("CourseTitle");
-            			CourseType = rs.getString("CourseType");
-            			Section = rs.getString("Section");
-            			Credit = rs.getDouble("Credit");
-            			ClassSchedule = rs.getString("ClassSchedule");
-            			Others = rs.getString("Others");
+            			group = rs.getString("Grouping");
+            			courseType = rs.getString("CourseType");
+            			courseCode = rs.getString("CourseCode");
+            			courseTitle = rs.getString("CourseTitle");
+            			courseType = rs.getString("CourseType");
+            			section = rs.getString("Section");
+            			credit = rs.getDouble("Credit");
+            			classSchedule = rs.getString("ClassSchedule");
+            			others = rs.getString("Others");
          
             %>
             <tr>
-                <td><%=Group%></td>
-                <td><%=CourseType%></td>
-                <td><%=CourseCode%></td>
-                <td><%=CourseTitle%></td>
-                <td><%=Section%></td>
-                <td><%=Credit%></td>
+                <td><%=group%></td>
+                <td><%=courseType%></td>
+                <td><%=courseCode%></td>
+                <td><%=courseTitle%></td>
+                <td><%=section%></td>
+                <td><%=credit%></td>
                 <td><button type="submit">신청</button></td>
-                <td><%=ClassSchedule%></td>
-                <td><%=Others%></td>
+                <td><%=classSchedule%></td>
+                <td><%=others%></td>
             <%
                 	}
            	 	}
