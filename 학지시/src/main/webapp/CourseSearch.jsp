@@ -39,6 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>수강신청 교과목검색</title>
     <link rel="stylesheet" href="CourseSearch.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -118,7 +119,7 @@
                 <td><%=grade%></td>
                 <td><%=courseType%></td>
                 <!-- 클릭 시, 교과목코드 쿠키 생성하는 js 코드 실행 -->
-                <td><a href="#" onClick="codeCheck('courseCode', '<%=courseCode%>')"><%=courseCode%></a></td>
+                <td><a href="#" onClick="addCourse(); codeCheck('courseCode', '<%=courseCode%>');"><%=courseCode%></a></td>
                 <td><%=section%></td>
                 <td><%=credit%></td>
                 <td><%=number%></td>

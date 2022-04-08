@@ -46,6 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>희망과목담기</title>
     <link rel="stylesheet" href="CourseCart.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -143,6 +144,11 @@
             	if(rs != null) {
             	
             		while (rs.next()) {
+            			GroupBean bean = new GroupBean();
+            			bean.setGroup(rs.getString("Grouping"));
+            			
+            			vlist.add(bean);
+            			
             			group = rs.getString("Grouping");
             			courseType = rs.getString("CourseType");
             			courseCode = rs.getString("CourseCode");
@@ -154,16 +160,16 @@
             			others = rs.getString("Others");
          
             %>
-            <tr>
-                <td><%=group%></td>
-                <td><%=courseType%></td>
-                <td><%=courseCode%></td>
-                <td><%=courseTitle%></td>
-                <td><%=section%></td>
-                <td><%=credit%></td>
+            <tr id = "addTable">
+                <td id = "cGroup"><%=group%></td>
+                <td id = "cType"><%=courseType%></td>
+                <td id = "cCode"><%=courseCode%></td>
+                <td id = "cTitle"><%=courseTitle%></td>
+                <td id = "cSection"><%=section%></td>
+                <td id = "cCredit"><%=credit%></td>
                 <td><button type="submit">신청</button></td>
-                <td><%=classSchedule%></td>
-                <td><%=others%></td>
+                <td id = "cSchedule"><%=classSchedule%></td>
+                <td id = "cOthers"><%=others%></td>
             <%
                 	}
            	 	}
