@@ -31,7 +31,7 @@
 
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
 		// CouseSearch.jsp에서 받아온 CourseCode를 쿼리문에 같이 입력
 		String sql = "select * from course_cart where CourseCode = \'" + cCode +"\';";

@@ -26,7 +26,7 @@
 	// 레코드가 몇 개인지 카운팅
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266");//Connection 생성
 		stmt = conn.createStatement();//Statement 생성
 		rs = stmt.executeQuery("select * from course_search"); //질의실행결과를 ResultSet에 담는다.
 %>
@@ -119,7 +119,7 @@
                 <td><%=grade%></td>
                 <td><%=courseType%></td>
                 <!-- 클릭 시, 교과목코드 쿠키 생성하는 js 코드 실행 -->
-                <td><a href="#" onClick="addCourse(); codeCheck('courseCode', '<%=courseCode%>');"><%=courseCode%></a></td>
+                <td><a href="#" onClick="codeCheck('courseCode', '<%=courseCode%>')"><%=courseCode%></a></td>
                 <td><%=section%></td>
                 <td><%=credit%></td>
                 <td><%=number%></td>
