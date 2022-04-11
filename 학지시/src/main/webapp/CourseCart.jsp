@@ -1,22 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
 <%@ page import="java.util.*"%>
+<%@ page import="CoursePack.CourseBean" %>
+<jsp:useBean id="cartBean" class="CoursePack.CourseBean"/>
+<jsp:setProperty name="cartBean" property="*"/> 
+
 <%
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	
-	Connection conn = null;
-	
-	Statement stmt = null;
-	
+	Class.forName("com.mysql.cj.jdbc.Driver");	
+	Connection conn = null;	
+	Statement stmt = null;	
 	ResultSet rs = null;
 	
-	String group = "";
-	String courseType = ""; 
-	String courseCode = ""; 
-	String courseTitle = ""; 
-	String section = ""; 
-	double credit = 0;  
-	String classSchedule = "";
-	String others = "";
+	Vector<CourseBean> vlist = new Vector<CourseBean>();
 
 	// 교과목코드에 해당하는 쿠키 값 가져오기
 	String cCode = "";
@@ -28,11 +22,10 @@
 	}
 	 
 	// 레코드가 몇 개인지 카운팅
-
 	int counter = 0;
 	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266");//Connection 생성
-		stmt = conn.createStatement();//Statement 생성
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234"); //Connection 생성
+		stmt = conn.createStatement(); //Statement 생성
 		// CouseSearch.jsp에서 받아온 CourseCode를 쿼리문에 같이 입력
 		String sql = "select * from course_cart where CourseCode = \'" + cCode +"\';";
 		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
@@ -144,32 +137,41 @@
             	if(rs != null) {
             	
             		while (rs.next()) {
-            			GroupBean bean = new GroupBean();
-            			bean.setGroup(rs.getString("Grouping"));
+            			cartBean.setGroup(rs.getString("Grouping"));
+            			cartBean.setCourseType(rs.getString("CourseType"));
+            			cartBean.setCourseCode(rs.getString("CourseCode"));
+            			cartBean.setCourseTitle(rs.getString("CourseTitle"));
+            			cartBean.setSection(rs.getString("Section"));
+            			cartBean.setCredit(rs.getDouble("Credit"));
+            			cartBean.setClassSchedule(rs.getString("ClassSchedule"));
+            			cartBean.setOthers(rs.getString("Others"));
+            			          			
+            			vlist.addElement(cartBean);
             			
-            			vlist.add(bean);
-            			
-            			group = rs.getString("Grouping");
-            			courseType = rs.getString("CourseType");
-            			courseCode = rs.getString("CourseCode");
-            			courseTitle = rs.getString("CourseTitle");
-            			courseType = rs.getString("CourseType");
-            			section = rs.getString("Section");
-            			credit = rs.getDouble("Credit");
-            			classSchedule = rs.getString("ClassSchedule");
-            			others = rs.getString("Others");
+            			for (int i = 0; i < vlist.size(); ++i) {
+            				cartBean = vlist.get(i);
+            				String cGroup = cartBean.getGroup();
+            				String cCourseType = cartBean.getCourseType();
+            				String cCourseCode = cartBean.getCourseCode();
+            				String cCourseTitle = cartBean.getCourseTitle();
+            				String cSection = cartBean.getSection();
+            				double cCredit = cartBean.getCredit();
+            				String cClassSchedule = cartBean.getClassSchedule();
+            				String cOthers = cartBean.getOthers();
+            				
+            			}
          
             %>
-            <tr id = "addTable">
-                <td id = "cGroup"><%=group%></td>
-                <td id = "cType"><%=courseType%></td>
-                <td id = "cCode"><%=courseCode%></td>
-                <td id = "cTitle"><%=courseTitle%></td>
-                <td id = "cSection"><%=section%></td>
-                <td id = "cCredit"><%=credit%></td>
+            <tr>
+                <td><%=group%></td>
+                <td><%=courseType%></td>
+                <td><%=courseCode%></td>
+                <td><%=courseTitle%></td>
+                <td><%=section%></td>
+                <td><%=credit%></td>
                 <td><button type="submit">신청</button></td>
-                <td id = "cSchedule"><%=classSchedule%></td>
-                <td id = "cOthers"><%=others%></td>
+                <td><%=classSchedule%></td>
+                <td><%=others%></td>
             <%
                 	}
            	 	}
