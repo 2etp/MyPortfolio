@@ -2,7 +2,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="CoursePack.CourseBean" %>
 <jsp:useBean id="cartBean" class="CoursePack.CourseBean"/>
-<jsp:setProperty name="cartBean" property="*"/> 
+<jsp:setProperty name="cartBean" property="*"/>
 
 <%
 	Class.forName("com.mysql.cj.jdbc.Driver");	
@@ -147,33 +147,33 @@
             			cartBean.setOthers(rs.getString("Others"));
             			          			
             			vlist.addElement(cartBean);
-            			
-            			for (int i = 0; i < vlist.size(); ++i) {
-            				cartBean = vlist.get(i);
-            				String cGroup = cartBean.getGroup();
-            				String cCourseType = cartBean.getCourseType();
-            				String cCourseCode = cartBean.getCourseCode();
-            				String cCourseTitle = cartBean.getCourseTitle();
-            				String cSection = cartBean.getSection();
-            				double cCredit = cartBean.getCredit();
-            				String cClassSchedule = cartBean.getClassSchedule();
-            				String cOthers = cartBean.getOthers();
-            				
-            			}
          
-            %>
-            <tr>
-                <td><%=group%></td>
-                <td><%=courseType%></td>
-                <td><%=courseCode%></td>
-                <td><%=courseTitle%></td>
-                <td><%=section%></td>
-                <td><%=credit%></td>
-                <td><button type="submit">신청</button></td>
-                <td><%=classSchedule%></td>
-                <td><%=others%></td>
-            <%
                 	}
+            		
+        			for (int i = 0; i < vlist.size(); ++i) {
+        				cartBean = vlist.get(i);
+        				String cGroup = cartBean.getGroup();
+        				String cCourseType = cartBean.getCourseType();
+        				String cCourseCode = cartBean.getCourseCode();
+        				String cCourseTitle = cartBean.getCourseTitle();
+        				String cSection = cartBean.getSection();
+        				double cCredit = cartBean.getCredit();
+        				String cClassSchedule = cartBean.getClassSchedule();
+        				String cOthers = cartBean.getOthers();
+        				
+        %>
+        <tr>
+            <td><%=cGroup%></td>
+            <td><%=cCourseType%></td>
+            <td><%=cCourseCode%></td>
+            <td><%=cCourseTitle%></td>
+            <td><%=cSection%></td>
+            <td><%=cCredit%></td>
+            <td><button type="submit">신청</button></td>
+            <td><%=cClassSchedule%></td>
+            <td><%=cOthers%></td>
+        <%
+        			}
            	 	}
             %>
             </tr>          
