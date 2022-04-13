@@ -18,17 +18,26 @@
 	for(Cookie c : cookies) {
 	  if("courseCode".equals(c.getName())){
 		  cCode = c.getValue();
+			break;
 	  }
 	}
-	 
-	// 레코드가 몇 개인지 카운팅
-	int counter = 0;
-	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:9753/course", "root", "0266"); //Connection 생성
-		stmt = conn.createStatement(); //Statement 생성
-		// CouseSearch.jsp에서 받아온 CourseCode를 쿼리문에 같이 입력
-		String sql = "select * from course_cart where CourseCode = \'" + cCode +"\';";
-		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
+	//String[] cCode;
+	out.println(cCode);
+	
+	
+	//int idx = cCode.indexOf("[");
+	//String newCode = "";
+	//if (idx != -1){
+	//newCode = cCode.substring(0, idx);
+	//}
+	//String[] test = new String[newCode.split(";").length];
+	String[] splitCode = cCode.split("%");
+	out.println(splitCode[0]);
+		
+	//ArrayList<String> cCode = new ArrayList<String>();
+	
+	
+	
 %>
 
 <!DOCTYPE html>
@@ -40,6 +49,10 @@
     <title>희망과목담기</title>
     <link rel="stylesheet" href="CourseCart.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+   	 	console.log("reset");
+		document.cookie = 'courseCode=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    </script>
 </head>
 
 <body>
@@ -133,7 +146,18 @@
             </tr>
             
             <%
-            	
+         // 레코드가 몇 개인지 카운팅
+        	int counter = 0;
+			out.println(splitCode.length);
+        	for(int j = 0; j < splitCode.length; ++j ) {
+        	try {
+        		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234"); //Connection 생성
+        		stmt = conn.createStatement(); //Statement 생성
+        		// CouseSearch.jsp에서 받아온 CourseCode를 쿼리문에 같이 입력
+        		String sql = "select * from course_cart where CourseCode = \'" + splitCode[j] +"\';";
+        		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
+        		
+        		
             	if(rs != null) {
             	
             		while (rs.next()) {
@@ -150,12 +174,7 @@
             			
                 	}
             		
-            		for(CourseBean i : vlist){
-        				System.out.println(i.getGroup());
-        				
-        			} 
-            		
-        			for (int i = 0; i < vlist.size(); ++i) {
+        			for (int i = 0; i < 1; ++i) {
         				cartBean = vlist.get(i);
         				String cGroup = cartBean.getGroup();
         				String cCourseType = cartBean.getCourseType();
@@ -182,7 +201,8 @@
         <%
         			}
            	 	}
-            %>    
+             
+            %> 
         </table>
     </div>
     
@@ -203,9 +223,10 @@
       				try {conn.close();} 
       				catch (Exception ex) {}
       		}
-            
+
+	}
     	%>
     	
-    	<script src="./CourseSearch.js"></script>
+    	<script defer src="./CourseSearch.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ function popUp() {
 
 
 // 교과목검색 페이지의 과목코드 쿠키 생성
-function codeCheck(cName, cValue, cDay){ 
+/*function codeCheck(cName, cValue, cDay){ 
 	var expire = new Date(); 
 	expire.setDate(expire.getDate() + cDay); 
 	courseCode = cName + '=' + escape(cValue) + '; path=/ '; 
@@ -13,5 +13,57 @@ function codeCheck(cName, cValue, cDay){
 	courseCode  += ';expires=' + expire.toGMTString() + ';'; 
 	
 	document.cookie = courseCode ; 
+}*/
+
+function resetCookie() {
+	console.log("reset");
+	document.cookie = 'courseCode=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+function getCookie(cName) {
+	cName = cName + '=';
+	var cookieData = document.cookie;
+	var start = cookieData.indexOf(cName);
+	var cValue = ''; if(start != -1) {
+		start += cName.length;
+		var end = cookieData.indexOf(';', start);
+		if(end == -1)
+			end = cookieData.length;
+		cValue = cookieData.substring(start, end);
+	}
+	
+	return unescape(cValue);
 }
 
+
+
+let courseCode;
+//let codeCookie = document.cookie;
+//document.cookie = codeCookie;
+function addCookie(cName, cValue, cDay) {
+	var expire = new Date(); 
+	expire.setDate(expire.getDate() + cDay); 
+		
+	if (document.cookie.indexOf('courseCode=') == -1) {
+		courseCode = cName + '=' + escape(cValue) + '; path=/ ';
+		console.log("new" + courseCode);
+	} else {
+		let codeCookie = getCookie("courseCode");
+		console.log("before: " + codeCookie);
+		codeCookie += ";" + cValue;
+		console.log("after: " + codeCookie);
+		//courseCode = codeCookie;
+		courseCode = 'courseCode=' + escape(codeCookie) + '; path=/ ';
+		console.log("add: " + courseCode);
+	}
+	
+	
+	
+	if(typeof cDay != 'undefined') 
+		courseCode  += ';expires=' + expire.toGMTString() + ';'; 
+	
+	document.cookie = courseCode ; 
+	
+	//codeCookie += ";" + cValue;
+	
+	//document.cookie = codeCookie;
+}
