@@ -35,9 +35,7 @@
 	out.println(splitCode[0]);
 		
 	//ArrayList<String> cCode = new ArrayList<String>();
-	
-	
-	
+		
 %>
 
 <!DOCTYPE html>
