@@ -182,6 +182,8 @@
         				double cCredit = cartBean.getCredit();
         				String cClassSchedule = cartBean.getClassSchedule();
         				String cOthers = cartBean.getOthers();
+        		
+        				
         				
         %>
          <tr>
