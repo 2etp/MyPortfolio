@@ -21,10 +21,7 @@
 			break;
 	  }
 	}
-	//String[] cCode;
-	out.println(cCode);
-	
-	
+
 	//int idx = cCode.indexOf("[");
 	//String newCode = "";
 	//if (idx != -1){
