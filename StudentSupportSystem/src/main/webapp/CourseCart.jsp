@@ -2,14 +2,9 @@
 <%@ page import="java.util.*"%>
 <%@ page import="CoursePack.CourseBean" %>
 <jsp:useBean id="cartBean" class="CoursePack.CourseBean"/>
-<jsp:setProperty name="cartBean" property="*"/>
+<jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
-<%
-	Class.forName("com.mysql.cj.jdbc.Driver");	
-	Connection conn = null;	
-	Statement stmt = null;	
-	ResultSet rs = null;
-	
+<%	
 	Vector<CourseBean> vlist = new Vector<CourseBean>();
 
 	// 교과목코드에 해당하는 쿠키 값 가져오기
@@ -21,8 +16,12 @@
 			break;
 	  }
 	}
-
-	String[] splitCode = cCode.split("%3B");		
+	
+	// 가져온 쿠키 문자열을 특정 문자를 기준으로 쪼개서 배열에 담음
+	String[] splitCode = cCode.split("%3B");
+	
+	// 해당 배열을 courseList 함수에 던져주고, 결괏값을 벡터 변수에 담음
+	vlist = sMgr.courseList(splitCode);
 %>
 
 <!DOCTYPE html>
@@ -131,33 +130,8 @@
             </tr>
             
          <%
-            
-        	for(int j = 0; j < splitCode.length; ++j) {
-        	try {
-        		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234"); //Connection 생성
-        		stmt = conn.createStatement(); //Statement 생성
-        		// CouseSearch.jsp에서 받아온 CourseCode를 쿼리문에 같이 입력
-        		String sql = "select * from course_cart where CourseCode = \'" + splitCode[j] +"\';";
-        		rs = stmt.executeQuery(sql); //질의실행결과를 ResultSet에 담는다.
-        		
-        		
-            	if(rs != null) {
-            	
-            		while (rs.next()) {
-            			cartBean.setGroup(rs.getString("Grouping"));
-            			cartBean.setCourseType(rs.getString("CourseType"));
-            			cartBean.setCourseCode(rs.getString("CourseCode"));
-            			cartBean.setCourseTitle(rs.getString("CourseTitle"));
-            			cartBean.setSection(rs.getString("Section"));
-            			cartBean.setCredit(rs.getDouble("Credit"));
-            			cartBean.setClassSchedule(rs.getString("ClassSchedule"));
-            			cartBean.setOthers(rs.getString("Others"));
-            			          			
-            			vlist.addElement(cartBean);
-            			
-                	}
-            		
-        			for (int i = 0; i < 1; ++i) {
+            		// vlist의 크기만큼 반복문을 돌면서 쿼리문 결괏값을 각각의 변수에 저장
+        			for (int i = 0; i < vlist.size(); ++i) {
         				cartBean = vlist.get(i);
         				String cGroup = cartBean.getGroup();
         				String cCourseType = cartBean.getCourseType();
@@ -169,6 +143,7 @@
         				String cOthers = cartBean.getOthers();
         		      				
         %>
+        <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
          <tr>
             <td><%=cGroup%></td>
             <td><%=cCourseType%></td>
@@ -183,29 +158,10 @@
      
         <%
         			}
-           	 	}
-             
+           	 	          
             %> 
     
-    <%
-			} catch (SQLException sqlException) {
-      			System.out.println("sql exception: " + sqlException.getMessage());
-      		} catch (Exception exception) {
-      			System.out.println("exception");
-      		} finally {
-      			// close는 생성의 역순으로 처리!!!
-      			if (rs != null)
-      				try {rs.close();} 
-      				catch (SQLException ex) {}
-      			if (stmt != null)
-      				try {stmt.close();} 
-      				catch (SQLException ex) {}
-      			if (conn != null)
-      				try {conn.close();} 
-      				catch (Exception ex) {}
-      		}
-	}
-    	%>
+
     	   </table>
     </div>
     	
