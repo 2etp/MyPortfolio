@@ -22,17 +22,7 @@
 	  }
 	}
 
-	//int idx = cCode.indexOf("[");
-	//String newCode = "";
-	//if (idx != -1){
-	//newCode = cCode.substring(0, idx);
-	//}
-	//String[] test = new String[newCode.split(";").length];
-	String[] splitCode = cCode.split("%");
-	out.println(splitCode[0]);
-		
-	//ArrayList<String> cCode = new ArrayList<String>();
-		
+	String[] splitCode = cCode.split("%3B");		
 %>
 
 <!DOCTYPE html>
@@ -140,11 +130,9 @@
                 <td>비고 <br>Others</td>
             </tr>
             
-            <%
-         // 레코드가 몇 개인지 카운팅
-        	int counter = 0;
-			out.println(splitCode.length);
-        	for(int j = 0; j < splitCode.length; ++j ) {
+         <%
+            
+        	for(int j = 0; j < splitCode.length; ++j) {
         	try {
         		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234"); //Connection 생성
         		stmt = conn.createStatement(); //Statement 생성
@@ -198,8 +186,6 @@
            	 	}
              
             %> 
-        </table>
-    </div>
     
     <%
 			} catch (SQLException sqlException) {
@@ -218,9 +204,10 @@
       				try {conn.close();} 
       				catch (Exception ex) {}
       		}
-
 	}
     	%>
+    	   </table>
+    </div>
     	
     	<script defer src="./CourseSearch.js"></script>
 </body>
