@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
 <%@ page import="java.util.*"%>
-<%@ page import="CoursePack.CourseBean" %>
-<jsp:useBean id="cartBean" class="CoursePack.CourseBean"/>
+<%@ page import="CoursePack.CartBean" %>
+<jsp:useBean id="cartBean" class="CoursePack.CartBean"/>
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <%	
-	Vector<CourseBean> vlist = new Vector<CourseBean>();
+	Vector<CartBean> vlist = new Vector<CartBean>();
 
 	// 교과목코드에 해당하는 쿠키 값 가져오기
 	String cCode = "";
@@ -21,7 +21,7 @@
 	String[] splitCode = cCode.split("%3B");
 	
 	// 해당 배열을 courseList 함수에 던져주고, 결괏값을 벡터 변수에 담음
-	vlist = sMgr.courseList(splitCode);
+	vlist = sMgr.cartList(splitCode);
 %>
 
 <!DOCTYPE html>

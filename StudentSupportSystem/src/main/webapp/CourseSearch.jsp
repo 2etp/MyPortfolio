@@ -1,34 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
 <%@ page import="java.util.*"%>
+<%@ page import="CoursePack.SearchBean" %>
+<jsp:useBean id="searchBean" class="CoursePack.SearchBean"/>
+<jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
+
 <%
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	
-	Connection conn = null;
-	
-	Statement stmt = null;
-	
-	ResultSet rs = null;
-	
-	String language = "";
-	String grade = ""; 
-	String courseType = "";
-	String courseCode = ""; 
-	String section = ""; 
-	double credit = 0;
-	String number = "";
-	String courseTitle = ""; 
-	String profName = "";
-	String classSchedule = "";
-	String others = "";
-	
-	
-		     
-	// 레코드가 몇 개인지 카운팅
-	int counter = 0;
-	try {
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:4020/course", "root", "1234");//Connection 생성
-		stmt = conn.createStatement();//Statement 생성
-		rs = stmt.executeQuery("select * from course_search"); //질의실행결과를 ResultSet에 담는다.
+	Vector<SearchBean> vlist = new Vector<SearchBean>();
+	vlist = sMgr.searchList();
 %>
 
 <!DOCTYPE html>
@@ -40,39 +18,42 @@
     <title>수강신청 교과목검색</title>
     <link rel="stylesheet" href="CourseSearch.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 
 <body>
 	
     <h2 style="color: #F2CB61; text-align: center;">2022학년도 1학기 개설강좌 검색</h2>
-
+	
+	<form name="frm" method="post" action="SearchProc.jsp">
     <!-- 밑의 두 스타일은 창 크기에 상관없이 요소들을 항상 가운데 정렬하는 방법임 -->
-    <div class="navi" style="width: 0px; margin: auto;">
-        <table style="position: relative; width: 900px; margin-left: -450px;">
-            <tr>
-                <td>검색 방법</td>
-                <td>
-                    <select>
-                    <option value="liberal" selected>교양과목</option>
-                    <option value="major basic">전공기초(1학년)</option>
-                    <option value="major">전공.교직과목(2,3,4학년)</option>
-                    </select>
-                </td>
-                <td>
-                    <select>
-                        <option value="major section" selected>전공선택</option>
-                        <option value="1">기계공학과</option>
-                        <option value="2">전기공학과</option>
-                        <option value="3">전자공학과</option>
-                        <option value="4">산업공학과</option>
-                        <option value="5">컴퓨터공학과</option>
-                        <option value="6">화학공학과</option>
-                    </select>
-                    <button type="submit">검색</button>
-                </td>
-            </tr>
-        </table>
-    </div> 
+	    <div class="navi" style="width: 0px; margin: auto;">
+	        <table style="position: relative; width: 900px; margin-left: -450px;">
+	            <tr>
+	                <td>검색 방법</td>
+	                <td>
+	                    <select name="courseCategory">
+		                    <option value="liberal" selected>교양과목</option>
+		                    <option value="major_basic">전공기초(1학년)</option>
+		                    <option value="major">전공.교직과목(2,3,4학년)</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <select>
+	                        <option value="major_section" selected>전공선택</option>
+	                        <option value="1">기계공학과</option>
+	                        <option value="2">전기공학과</option>
+	                        <option value="3">전자공학과</option>
+	                        <option value="4">산업공학과</option>
+	                        <option value="5">컴퓨터공학과</option>
+	                        <option value="6">화학공학과</option>
+	                    </select>
+	                    <button type="submit">검색</button>
+	                </td>
+	            </tr>
+	        </table>
+	    </div>
+    </form> 
 
     <br>
 
@@ -97,64 +78,45 @@
             </tr>
             
              <%
-            	if(rs != null) {
-            	
-            		while (rs.next()) {
-            			language = rs.getString("Native");
-            			grade = rs.getString("Grade");
-            			courseType = rs.getString("CourseType");
-            			courseCode = rs.getString("CourseCode");
-            			section = rs.getString("Section");
-            			credit = rs.getDouble("Credit");
-            			number = rs.getString("Number");
-            			courseTitle = rs.getString("CourseTitle");
-            			profName = rs.getString("ProfName");
-            			classSchedule = rs.getString("ClassSchedule");
-            			others = rs.getString("Others");
-         
+	            for (int i = 0; i < vlist.size(); ++i) {
+	            	
+					searchBean = vlist.get(i);
+					
+					String sLanguage = searchBean.getLanguage();
+					String sGrade = searchBean.getGrade();
+					String sCourseType = searchBean.getCourseType();
+					String sCourseCode = searchBean.getCourseCode();
+					String sSection = searchBean.getSection();
+					double sCredit = searchBean.getCredit();
+					String sNumber= searchBean.getNumber();
+					String sCourseTitle = searchBean.getCourseTitle();
+					String sProfName = searchBean.getProfName();
+					String sClassSchedule = searchBean.getClassSchedule();
+					String sOthers = searchBean.getOthers();
             %>
             
              <tr>
-                <td><%=language%></td>
-                <td><%=grade%></td>
-                <td><%=courseType%></td>
+                <td><%=sLanguage%></td>
+                <td><%=sGrade%></td>
+                <td><%=sCourseType%></td>
                 <!-- 클릭 시, 교과목코드 쿠키 생성하는 js 코드 실행 -->
-                <td><a href="#" onClick="addCookie('courseCode', '<%=courseCode%>')"><%=courseCode%></a></td>
-                <td><%=section%></td>
-                <td><%=credit%></td>
-                <td><%=number%></td>
-                <td><%=courseTitle%></td>
-                <td><%=profName%></td>
-                <td><%=classSchedule%></td>
-                <td><%=others%></td>
+                <td><a href="#" onClick="addCookie('courseCode', '<%=sCourseCode%>')"><%=sCourseCode%></a></td>
+                <td><%=sSection%></td>
+                <td><%=sCredit%></td>
+                <td><%=sNumber%></td>
+                <td><%=sCourseTitle%></td>
+                <td><%=sProfName%></td>
+                <td><%=sClassSchedule%></td>
+                <td><%=sOthers%></td>
                              
             <%     
-                	}
+                	
            	 	}
             %>
               </tr>        
         </table>
     </div>
     
-	  <%
-			} catch (SQLException sqlException) {
-		    			System.out.println("sql exception: " + sqlException.getMessage());
-    		} catch (Exception exception) {
-    			System.out.println("exception");
-    		} finally {
-    			// close는 생성의 역순으로 처리!!!
-    			if (rs != null)
-    				try {rs.close();} 
-    				catch (SQLException ex) {}
-    			if (stmt != null)
-    				try {stmt.close();} 
-    				catch (SQLException ex) {}
-    			if (conn != null)
-    				try {conn.close();} 
-    				catch (Exception ex) {}
-    		}
-	          
-	  	%>
-	  	<script src="./CourseSearch.js"></script>
+	<script src="./CourseSearch.js"></script>
 </body>
 </html>

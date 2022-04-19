@@ -1,6 +1,6 @@
 package CoursePack;
 
-public class CourseBean {
+public class CartBean {
 	
 	private String group = "";
 	private String courseType = ""; 

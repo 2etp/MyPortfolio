@@ -18,12 +18,14 @@ public class SystemMgr {
 		}
 	}
 
-	public Vector<CourseBean> courseList(String[] splitCode) {
+	// 희망과목담기한 목록 보여주기 기능
+	public Vector<CartBean> cartList(String[] splitCode) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		Vector<CourseBean> vlist = new Vector<CourseBean>();
+		
+		Vector<CartBean> vlist = new Vector<CartBean>();
 	
 		try {
 			con = pool.getConnection();				
@@ -37,7 +39,8 @@ public class SystemMgr {
 				rs = pstmt.executeQuery();
 			
 				while(rs.next()) {
-					CourseBean cartBean = new CourseBean();
+					CartBean cartBean = new CartBean();
+					
 					cartBean.setGroup(rs.getString("Grouping"));
         			cartBean.setCourseType(rs.getString("CourseType"));
         			cartBean.setCourseCode(rs.getString("CourseCode"));
@@ -50,6 +53,47 @@ public class SystemMgr {
 					vlist.addElement(cartBean);
 				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vlist;
+	}
+	
+	// 희과담의 교과목검색 창에서 교과목 리스트 보여주기 기능
+	public Vector<SearchBean> searchList() {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		Vector<SearchBean> vlist = new Vector<SearchBean>();
+	
+		try {
+			con = pool.getConnection();				
+			sql = "select * from course_search";
+			pstmt = con.prepareStatement(sql);			
+			rs = pstmt.executeQuery();
+			
+				while(rs.next()) {
+					SearchBean searchBean = new SearchBean();
+					
+					searchBean.setLanguage(rs.getString("Native"));
+					searchBean.setGrade(rs.getString("Grade"));
+					searchBean.setCourseType(rs.getString("CourseType"));
+					searchBean.setCourseCode(rs.getString("CourseCode"));
+					searchBean.setSection(rs.getString("Section"));
+					searchBean.setCredit(rs.getDouble("Credit"));
+					searchBean.setNumber(rs.getString("Number"));
+					searchBean.setCourseTitle(rs.getString("CourseTitle"));
+					searchBean.setProfName(rs.getString("ProfName"));
+					searchBean.setClassSchedule(rs.getString("ClassSchedule"));
+					searchBean.setOthers(rs.getString("Others"));
+        			
+					vlist.addElement(searchBean);
+				}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
