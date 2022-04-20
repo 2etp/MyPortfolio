@@ -4,10 +4,10 @@
 <jsp:useBean id="searchBean" class="CoursePack.SearchBean"/>
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
-<%
+<%-- <%
 	Vector<SearchBean> vlist = new Vector<SearchBean>();
 	vlist = sMgr.searchList();
-%>
+%> --%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +39,7 @@
 	                    </select>
 	                </td>
 	                <td>
-	                    <select>
+	                    <select name="major">
 	                        <option value="major_section" selected>전공선택</option>
 	                        <option value="1">기계공학과</option>
 	                        <option value="2">전기공학과</option>
