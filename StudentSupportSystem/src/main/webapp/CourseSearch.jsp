@@ -4,10 +4,7 @@
 <jsp:useBean id="searchBean" class="CoursePack.SearchBean"/>
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
-<%-- <%
-	Vector<SearchBean> vlist = new Vector<SearchBean>();
-	vlist = sMgr.searchList();
-%> --%>
+
 
 <!DOCTYPE html>
 <html lang="en">
