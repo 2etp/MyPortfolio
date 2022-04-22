@@ -4,8 +4,6 @@
 <jsp:useBean id="searchBean" class="CoursePack.SearchBean"/>
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
