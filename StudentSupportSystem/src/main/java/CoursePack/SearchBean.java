@@ -1,5 +1,6 @@
 package CoursePack;
 
+// 교과목검색 자바빈즈
 public class SearchBean {
 
 	String language = "";

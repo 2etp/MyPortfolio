@@ -1,5 +1,6 @@
 package CoursePack;
 
+// Èñ°ú´ã ÀÚ¹ÙºóÁî
 public class CartBean {
 	
 	private String group = "";
