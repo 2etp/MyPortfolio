@@ -5,9 +5,11 @@
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <%
-	Vector<SearchBean> vlist = new Vector<SearchBean>();
-	vlist = sMgr.searchList();
+	request.setCharacterEncoding("UTF-8");
+	String courseCategory = request.getParameter("courseCategory");
+	String major = request.getParameter("major");
 	
+	Vector<SearchBean> vlist = sMgr.searchList(major);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +27,7 @@
 	
     <h2 style="color: #F2CB61; text-align: center;">2022학년도 1학기 개설강좌 검색</h2>
 	
-	<form name="frm" method="post" action="SearchProc.jsp">
+	<form name="frm" method="post" action="CourseSearch.jsp">
     <!-- 밑의 두 스타일은 창 크기에 상관없이 요소들을 항상 가운데 정렬하는 방법임 -->
 	    <div class="navi" style="width: 0px; margin: auto;">
 	        <table style="position: relative; width: 900px; margin-left: -450px;">
@@ -41,11 +43,11 @@
 	                <td>
 	                    <select name="major">
 	                        <option value="major_section" selected>전공선택</option>
-	                        <option value="1">기계공학과</option>
-	                        <option value="2">전기공학과</option>
-	                        <option value="3">전자공학과</option>
-	                        <option value="4">산업공학과</option>
-	                        <option value="5">컴퓨터공학과</option>
+	                        <option value="mechanical_engineering">기계공학과</option>
+	                        <option value="electrical_engineering">전기공학과</option>
+	                        <option value="electronic_engineering">전자공학과</option>
+	                        <option value="industrial_engineering">산업공학과</option>
+	                        <option value="computer_engineering">컴퓨터공학과</option>
 	                        <option value="6">화학공학과</option>
 	                    </select>
 	                    <button type="submit">검색</button>
