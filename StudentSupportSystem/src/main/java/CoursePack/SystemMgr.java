@@ -63,6 +63,9 @@ public class SystemMgr {
 	
 	// 희과담의 교과목검색 창에서 교과목 리스트 보여주기 기능
 	public Vector<SearchBean> searchList(String major) {
+		
+		if(major == null) return new Vector<SearchBean>();
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -72,9 +75,9 @@ public class SystemMgr {
 	
 		try {
 			con = pool.getConnection();				
-			sql = "select * from ?";
+			sql = "select * from " + major;
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, major);
+			
 			rs = pstmt.executeQuery();
 			
 				while(rs.next()) {

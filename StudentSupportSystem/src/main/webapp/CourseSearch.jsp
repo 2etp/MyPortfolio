@@ -5,12 +5,14 @@
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <%
+	// 교과목검색의 submit 누른 후 파라미터 받기
 	request.setCharacterEncoding("UTF-8");
 	String courseCategory = request.getParameter("courseCategory");
 	String major = request.getParameter("major");
 	
 	Vector<SearchBean> vlist = sMgr.searchList(major);
 %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,6 @@
     <title>수강신청 교과목검색</title>
     <link rel="stylesheet" href="CourseSearch.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
 </head>
 
 <body>
