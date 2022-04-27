@@ -24,6 +24,7 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
+
 <body>
 	
     <h2 style="color: #F2CB61; text-align: center;">2022학년도 1학기 개설강좌 검색</h2>
