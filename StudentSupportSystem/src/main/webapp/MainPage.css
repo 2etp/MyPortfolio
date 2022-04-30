@@ -3,7 +3,7 @@ html{
     margin: 0;
 }
 
-a:not(.service a){
+a:not(.service a, .mainTab_plus){
     text-decoration: none;
     color: #000;
 }

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>부산대학교 학생지원시스템</title>
-    <link rel="stylesheet" href="MainPage.css">
+    <link rel="stylesheet" href="MainPage.css?after">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
