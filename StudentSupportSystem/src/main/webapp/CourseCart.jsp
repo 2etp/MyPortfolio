@@ -39,7 +39,6 @@
     </script>
 </head>
 
-
 <body>
     <h1 style="color: blue; text-align: center;">2022 학년도 1학기 희망과목담기<br>
     <span style="font-size: 26px;">Adding Course you want to register for</span></h1>
