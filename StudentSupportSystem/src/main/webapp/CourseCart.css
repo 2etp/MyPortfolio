@@ -45,3 +45,8 @@ body{
     height: 30px;
     font-size: 13px;
 }
+
+#course_total {
+	float: left;
+	
+}

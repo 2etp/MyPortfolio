@@ -112,8 +112,19 @@
             </tr> 
         </table>
     </div>
+    
 
     <h4 style="color: blue; margin-bottom: 3px;">희망과목담기 내역(Details of Adding Courses)</h4>
+    <hr>
+    <div id="course_total">
+	    <label for="course_total"><span style="color:blue">희망과목수</span></label>
+	    <input type="text" id="course_total" value="0" readonly style="width:30px; float: right">
+	    <p style="margin-top:0px">Number of Courses</p>
+    </div> 
+    
+    <div id="course_total">
+	    <p style="margin: 0 0 0 300px"><span style="color:blue">[희망과목은 최대 5과목만 담을 수 있습니다.]</span><br>[You can add up to 5 courses only.]</p>
+    </div>
 
     <div class="main_contents">
         <table>
@@ -141,6 +152,10 @@
         				double cCredit = cartBean.getCredit();
         				String cClassSchedule = cartBean.getClassSchedule();
         				String cOthers = cartBean.getOthers();
+        				
+        				if (cCourseCode == cCourseCode) {
+        					out.println("이미 신청된 과목입니다.<p/>");
+        				}
         		      				
         %>
         <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
@@ -151,7 +166,7 @@
             <td><%=cCourseTitle%></td>
             <td><%=cSection%></td>
             <td><%=cCredit%></td>
-            <td><button type="submit">신청</button></td>
+            <td><input type="submit" id="apply" value="신청" onClick="buttonToggle();"></td>
             <td><%=cClassSchedule%></td>
             <td><%=cOthers%></td>
         </tr>
@@ -163,7 +178,28 @@
     
     	   </table>
     </div>
+    
+    <h4 style="color: blue; margin-bottom: 3px;">수강신청내역 확인 및 직접입력(Confirm of registered course list & Adding courses directly)</h4>
     	
+    <div class="main_contents">
+        <table>
+            <tr style="color: white; background-color: #74a5c2; border-top: 2px solid #056399">
+                <td>집단구분 <br>Group</td>
+                <td>과목구분 <br>Course Type</td>
+                <td>과목번호 <br>Course Code</td>
+                <td>과목명 <br>Course Title</td>
+                <td>분반 <br>Section</td>
+                <td>학점 <br>Credit</td>
+                <td>제한인원 <br>Number of students to be registered</td>
+                <td>재이수 <br>Re-<br>taking</td>
+                <td>삭제버튼 <br>Delete</td>
+                <td>시간표요약정보 <br>Class Schedule</td>
+                <td>분반변경 <br>Section Change</td>
+                <td>비고 <br>Others</td>
+            </tr>
+        </table>
+    </div>
+    	<script defer src="./CourseCart.js"></script>
     	<script defer src="./CourseSearch.js"></script>
 </body>
 </html>
