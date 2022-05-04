@@ -15,10 +15,13 @@ function popUp() {
 	document.cookie = courseCode ; 
 }*/
 
+// 교과목코드 쿠키 리셋
 function resetCookie() {
 	console.log("reset");
 	document.cookie = 'courseCode=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+
+// 쿠키 생성
 function getCookie(cName) {
 	cName = cName + '=';
 	var cookieData = document.cookie;
@@ -34,11 +37,9 @@ function getCookie(cName) {
 	return unescape(cValue);
 }
 
-
-
 let courseCode;
-//let codeCookie = document.cookie;
-//document.cookie = codeCookie;
+
+// 쿠키 더미 만들기
 function addCookie(cName, cValue, cDay) {
 	var expire = new Date(); 
 	expire.setDate(expire.getDate() + cDay); 
@@ -51,19 +52,12 @@ function addCookie(cName, cValue, cDay) {
 		console.log("before: " + codeCookie);
 		codeCookie += ";" + cValue;
 		console.log("after: " + codeCookie);
-		//courseCode = codeCookie;
 		courseCode = 'courseCode=' + escape(codeCookie) + '; path=/ ';
 		console.log("add: " + courseCode);
-	}
-	
-	
+	}	
 	
 	if(typeof cDay != 'undefined') 
 		courseCode  += ';expires=' + expire.toGMTString() + ';'; 
 	
 	document.cookie = courseCode ; 
-	
-	//codeCookie += ";" + cValue;
-	
-	//document.cookie = codeCookie;
 }
