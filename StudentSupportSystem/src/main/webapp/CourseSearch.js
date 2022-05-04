@@ -23,10 +23,12 @@ function resetCookie() {
 
 // 쿠키 생성
 function getCookie(cName) {
+	
 	cName = cName + '=';
 	var cookieData = document.cookie;
 	var start = cookieData.indexOf(cName);
-	var cValue = ''; if(start != -1) {
+	var cValue = ';' 
+	if(start != -1) {
 		start += cName.length;
 		var end = cookieData.indexOf(';', start);
 		if(end == -1)
@@ -39,16 +41,26 @@ function getCookie(cName) {
 
 let courseCode;
 
+
 // 쿠키 더미 만들기
-function addCookie(cName, cValue, cDay) {
+function addCookie(cName, cValue) {
 	var expire = new Date(); 
-	expire.setDate(expire.getDate() + cDay); 
+	expire.setDate(expire.getDate()); 
 		
 	if (document.cookie.indexOf('courseCode=') == -1) {
 		courseCode = cName + '=' + escape(cValue) + '; path=/ ';
 		console.log("new" + courseCode);
 	} else {
 		let codeCookie = getCookie("courseCode");
+		let arr = codeCookie.split(";");
+		console.log("arr(" + arr.length + "): " + arr);
+		for (let i = 0; i < arr.length; ++i) {
+				console.log("compare: " + arr[i] + "==" + cValue);
+			if (arr[i] == cValue) {
+				console.log("중복이다");
+				return;
+			}
+		}
 		console.log("before: " + codeCookie);
 		codeCookie += ";" + cValue;
 		console.log("after: " + codeCookie);
@@ -56,8 +68,6 @@ function addCookie(cName, cValue, cDay) {
 		console.log("add: " + courseCode);
 	}	
 	
-	if(typeof cDay != 'undefined') 
-		courseCode  += ';expires=' + expire.toGMTString() + ';'; 
 	
 	document.cookie = courseCode ; 
 }
