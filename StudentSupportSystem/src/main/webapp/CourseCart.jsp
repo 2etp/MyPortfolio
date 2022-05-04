@@ -20,6 +20,10 @@
 	// 가져온 쿠키 문자열을 특정 문자를 기준으로 쪼개서 배열에 담음
 	String[] splitCode = cCode.split("%3B");
 	
+	for(int i = 0; i < splitCode.length; ++i) {
+		out.println(splitCode[i]);
+	}
+	
 	// 해당 배열을 courseList 함수에 던져주고, 결괏값을 벡터 변수에 담음
 	vlist = sMgr.cartList(splitCode);
 %>
@@ -141,6 +145,7 @@
             </tr>
             
          <%
+         	
             		// vlist의 크기만큼 반복문을 돌면서 쿼리문 결괏값을 각각의 변수에 저장
         			for (int i = 0; i < vlist.size(); ++i) {
         				cartBean = vlist.get(i);
@@ -153,10 +158,7 @@
         				String cClassSchedule = cartBean.getClassSchedule();
         				String cOthers = cartBean.getOthers();
         				
-        				if (cCourseCode == cCourseCode) {
-        					out.println("이미 신청된 과목입니다.<p/>");
-        				}
-        		      				
+	        				     		      				
         %>
         <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
          <tr>
