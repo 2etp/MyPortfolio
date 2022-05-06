@@ -9,7 +9,7 @@ function resetCookie() {
 	document.cookie = 'courseCode=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
-// 쿠키 불러오기
+// 쿠키 불러오기 함수
 function getCookie(cName) {
 	
 	cName = cName + '=';
@@ -41,7 +41,7 @@ function getCookie(cName) {
 
 let courseCode;
 
-// 쿠키 더미 생성
+// 쿠키 더미 생성 함수
 function addCookie(cName, cValue) {
 	var expire = new Date(); 
 	expire.setDate(expire.getDate()); 
@@ -72,6 +72,6 @@ function addCookie(cName, cValue) {
 		console.log("add: " + courseCode);
 	}	
 	
-	
+	// 쿠키 생성 코드
 	document.cookie = courseCode ; 
 }
