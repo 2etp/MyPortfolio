@@ -59,7 +59,7 @@
     </form> 
 
     <br>
-
+	<p id="overlap_alert">ㅇㅅㅇ</p>
     <p style="text-align: center;">아래 목록 중 신청할 교과목코드를 클릭하면 코드와 분반이 수강신청화면으로 이동합니다.<br>
     <span style="color: blue; font-weight: bold;">현재 수강인원표시는 첫날 오전 11시 이후에 서비스됩니다.(서버시스템의 부하급증시는 서비스가
     중단됨을 양지하시기 바랍니다)</span></p>

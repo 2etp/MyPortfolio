@@ -125,6 +125,7 @@
     <div id="course_total">
 	    <p style="margin: 0 0 0 300px"><span style="color:blue">[희망과목은 최대 5과목만 담을 수 있습니다.]</span><br>[You can add up to 5 courses only.]</p>
     </div>
+    <!-- <p id="overlap_alert">ㅇㅅㅇ</p> -->
 
     <div class="main_contents">
         <table>
@@ -198,7 +199,8 @@
             </tr>
         </table>
     </div>
-    	<script defer src="./CourseCart.js"></script>
-    	<script defer src="./CourseSearch.js"></script>
+    
+   	<script defer src="./CourseCart.js"></script>
+   	<script defer src="./CourseSearch.js"></script>
 </body>
 </html>

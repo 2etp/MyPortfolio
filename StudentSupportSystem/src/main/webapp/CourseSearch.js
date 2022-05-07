@@ -62,6 +62,8 @@ function addCookie(cName, cValue) {
 				console.log("compare: " + arr[i] + "==" + cValue);
 			if (arr[i] == cValue) {
 				console.log("중복이다");
+				//document.getElementById("overlap_alert").innerHTML="이미 신청된 과목입니다.";
+				
 				return;
 			}
 		}
