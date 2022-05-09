@@ -154,10 +154,9 @@
         				double cCredit = cartBean.getCredit();
         				String cClassSchedule = cartBean.getClassSchedule();
         				String cOthers = cartBean.getOthers();
-        				String applyChk;
-        				String apply = "";
-        				applyChk = apply + i;
- 	        				     		      				
+        				int applyChk;
+        				applyChk = i;
+        	
         %>
         <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
          <tr>
@@ -168,7 +167,7 @@
             <td><%=cSection%></td>
             <td><%=cCredit%></td>
           
-            <td><input type="submit" id="<%=applyChk%>" value="신청" onClick="buttonToggle();"></td>
+            <td><input class="applyChk" type="submit" id="<%=applyChk%>" value="신청" onClick="buttonToggle();"></td>
             <td><%=cClassSchedule%></td>
             <td><%=cOthers%></td>
         </tr>
