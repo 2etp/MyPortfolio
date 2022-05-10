@@ -167,7 +167,7 @@
             <td><%=cSection%></td>
             <td><%=cCredit%></td>
           
-            <td><input class="applyChk" type="submit" id="<%=applyChk%>" value="신청" onClick="buttonToggle();"></td>
+            <td><input class="applyChk" type="submit" id="<%=applyChk%>" value="신청" onClick="buttonToggle(<%=applyChk%>);"></td>
             <td><%=cClassSchedule%></td>
             <td><%=cOthers%></td>
         </tr>
