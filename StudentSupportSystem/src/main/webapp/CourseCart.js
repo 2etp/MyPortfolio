@@ -7,6 +7,7 @@ for (let i = 0; i < applyChk.length; ++i) {
 	console.log(apply[i]);
 }
 
+// 희과담 페이지의 신청 버튼 Toggle 함수
 function buttonToggle(btnId) {
 	if(apply[btnId].value=="신청") {
 		apply[btnId].value="신청취소";

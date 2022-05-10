@@ -62,7 +62,7 @@ function addCookie(cName, cValue) {
 				console.log("compare: " + arr[i] + "==" + cValue);
 			if (arr[i] == cValue) {
 				console.log("중복이다");
-				// 중복이면 에러코드 생성 함수 실행
+				// 중복이면 에러쿠키 생성 함수 실행
 				errorCookie();
 				
 				return;
@@ -79,7 +79,7 @@ function addCookie(cName, cValue) {
 	document.cookie = courseCode ; 
 }
 
-	// 에러코드 쿠키 생성
+// 에러쿠키 생성
 function errorCookie() {
 	var expire = new Date(); 
 	expire.setDate(expire.getDate());

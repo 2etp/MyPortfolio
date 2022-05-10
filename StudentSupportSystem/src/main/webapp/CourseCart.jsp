@@ -17,13 +17,17 @@
 		  cCode = c.getValue();
 		  break;
 	  }
-	  else if("errorCookie".equals(c.getName())) {
-		  eCookie = c.getValue();
-		 
-	  }
+	 
 	}
-	out.println("cCode: " + cCode);
-	out.println("eCookie: " + eCookie);
+	
+	for(Cookie c : cookies) {
+		if("errorCookie".equals(c.getName())) {
+			  eCookie = c.getValue();
+			  eCookie = "이미 신청된 과목입니다. 이 개나리야";
+		  }
+	}
+	//out.println("cCode: " + cCode);
+	//out.println("eCookie: " + eCookie);
 	// 가져온 쿠키 문자열을 특정 문자를 기준으로 쪼개서 배열에 담음
 	String[] splitCode = cCode.split("%3B");
 	
@@ -132,7 +136,8 @@
     <div id="course_total">
 	    <p style="margin: 0 0 0 300px"><span style="color:blue">[희망과목은 최대 5과목만 담을 수 있습니다.]</span><br>[You can add up to 5 courses only.]</p>
     </div>
-    <!-- <p id="overlap_alert">ㅇㅅㅇ</p> -->
+    
+    <h3 id="overlap_alert"><%=eCookie%></h3>
 
     <div class="main_contents">
         <table>
