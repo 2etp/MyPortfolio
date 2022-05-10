@@ -9,14 +9,21 @@
 
 	// 교과목코드에 해당하는 쿠키 값 가져오기
 	String cCode = "";
+	String eCookie = "";
 	Cookie[] cookies = request.getCookies();
+	
 	for(Cookie c : cookies) {
-	  if("courseCode".equals(c.getName())){
+	  if("courseCode".equals(c.getName())) {
 		  cCode = c.getValue();
-			break;
+		  break;
+	  }
+	  else if("errorCookie".equals(c.getName())) {
+		  eCookie = c.getValue();
+		 
 	  }
 	}
-	
+	out.println("cCode: " + cCode);
+	out.println("eCookie: " + eCookie);
 	// 가져온 쿠키 문자열을 특정 문자를 기준으로 쪼개서 배열에 담음
 	String[] splitCode = cCode.split("%3B");
 	

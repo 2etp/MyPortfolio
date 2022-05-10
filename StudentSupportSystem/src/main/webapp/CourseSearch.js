@@ -62,8 +62,8 @@ function addCookie(cName, cValue) {
 				console.log("compare: " + arr[i] + "==" + cValue);
 			if (arr[i] == cValue) {
 				console.log("중복이다");
-				errorCode();
-				//document.getElementById("overlap_alert").innerHTML="이미 신청된 과목입니다.";
+				// 중복이면 에러코드 생성 함수 실행
+				errorCookie();
 				
 				return;
 			}
@@ -80,6 +80,12 @@ function addCookie(cName, cValue) {
 }
 
 	// 에러코드 쿠키 생성
-function errorCode() {
+function errorCookie() {
+	var expire = new Date(); 
+	expire.setDate(expire.getDate());
+	
+	var errorCookie = 'errorCookie=' + escape("test") + '; path=/ ';
+	document.cookie = errorCookie;
+	console.log("errorCookie: " + errorCookie);
 	
 }
