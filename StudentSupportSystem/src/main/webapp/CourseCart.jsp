@@ -104,113 +104,92 @@
     </div>
     <br>
 
-    <div class="menu">
-        <table>
-            <tr>
-                <td>교과목 코드<br>: Course Code</td>
-                <td><input style="margin-bottom: 30px; width: 100px;"></td>
-                <td>분반 :<br> Section</td>
-                <td><input style="margin-bottom: 30px; width: 100px;"></td>
-                <td style="width: 820px;" class="subjectsearch">
-                    <button type="submit" style="float: left;">희망과목담기 register</button>
-                    <button type="submit" style="float: left;">지우기 Delete</button>
-                    <button type="button" onClick="popUp()" 
-                        style="float: left;">교과목검색 Search Courses</button>
-                    <button type="submit" style="float: left;">교과목검색(상세) Search Courses(Details)</button><br>
-                    <button type="submit" style="clear: left; float: left;">로그아웃 Log-out</button>
-                </td>
-            </tr> 
-        </table>
-    </div>
-    
-
-    <h4 style="color: blue; margin-bottom: 3px;">희망과목담기 내역(Details of Adding Courses)</h4>
-    <hr>
-    <div id="course_total">
-	    <label for="course_total"><span style="color:blue">희망과목수</span></label>
-	    <input type="text" id="course_total" value="0" readonly style="width:30px; float: right">
-	    <p style="margin-top:0px">Number of Courses</p>
-    </div> 
-    
-    <div id="course_total">
-	    <p style="margin: 0 0 0 300px"><span style="color:blue">[희망과목은 최대 5과목만 담을 수 있습니다.]</span><br>[You can add up to 5 courses only.]</p>
-    </div>
-    
-    <h3 id="overlap_alert"><%=eCookie%></h3>
-
-    <div class="main_contents">
-        <table>
-            <tr style="color: white; background-color: #74a5c2; border-top: 2px solid #056399">
-                <td>집단구분 <br>Group</td>
-                <td>과목구분 <br>Course Type</td>
-                <td>과목번호 <br>Course Code</td>
-                <td>과목명 <br>Course Title</td>
-                <td>분반 <br>Section</td>
-                <td>학점 <br>Credit</td>
-                <td>신청 <br>Apply</td>
-                <td>시간표요약정보 <br>Class Schedule</td>
-                <td>비고 <br>Others</td>
-            </tr>
-            
-         <%
-         	
-            		// vlist의 크기만큼 반복문을 돌면서 쿼리문 결괏값을 각각의 변수에 저장
-        			for (int i = 0; i < vlist.size(); ++i) {
-        				cartBean = vlist.get(i);
-        				String cGroup = cartBean.getGroup();
-        				String cCourseType = cartBean.getCourseType();
-        				String cCourseCode = cartBean.getCourseCode();
-        				String cCourseTitle = cartBean.getCourseTitle();
-        				String cSection = cartBean.getSection();
-        				double cCredit = cartBean.getCredit();
-        				String cClassSchedule = cartBean.getClassSchedule();
-        				String cOthers = cartBean.getOthers();
-        				int applyChk;
-        				applyChk = i;
-        	
-        %>
-        <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
-         <tr>
-            <td><%=cGroup%></td>
-            <td><%=cCourseType%></td>
-            <td><%=cCourseCode%></td>
-            <td><%=cCourseTitle%></td>
-            <td><%=cSection%></td>
-            <td><%=cCredit%></td>
-          
-            <td><input class="applyChk" type="submit" id="<%=applyChk%>" value="신청" onClick="buttonToggle(<%=applyChk%>);"></td>
-            <td><%=cClassSchedule%></td>
-            <td><%=cOthers%></td>
-        </tr>
-     
-        <%
-        			}
-           	 	          
-            %> 
-    
-    	   </table>
-    </div>
-    
-    <h4 style="color: blue; margin-bottom: 3px;">수강신청내역 확인 및 직접입력(Confirm of registered course list & Adding courses directly)</h4>
-    	
-    <div class="main_contents">
-        <table>
-            <tr style="color: white; background-color: #74a5c2; border-top: 2px solid #056399">
-                <td>집단구분 <br>Group</td>
-                <td>과목구분 <br>Course Type</td>
-                <td>과목번호 <br>Course Code</td>
-                <td>과목명 <br>Course Title</td>
-                <td>분반 <br>Section</td>
-                <td>학점 <br>Credit</td>
-                <td>제한인원 <br>Number of students to be registered</td>
-                <td>재이수 <br>Re-<br>taking</td>
-                <td>삭제버튼 <br>Delete</td>
-                <td>시간표요약정보 <br>Class Schedule</td>
-                <td>분반변경 <br>Section Change</td>
-                <td>비고 <br>Others</td>
-            </tr>
-        </table>
-    </div>
+   	<form name="cartFrm" method="post" action="CourseRegistration.jsp">
+	    <div class="menu">
+	        <table>
+	            <tr>
+	                <td>교과목 코드<br>: Course Code</td>
+	                <td><input style="margin-bottom: 30px; width: 100px;"></td>
+	                <td>분반 :<br> Section</td>
+	                <td><input style="margin-bottom: 30px; width: 100px;"></td>
+	                <td style="width: 820px;" class="subjectsearch">
+	                    <button type="submit" style="float: left;">희망과목담기 register</button>
+	                    <button type="submit" style="float: left;">지우기 Delete</button>
+	                    <button type="button" onClick="popUp()" 
+	                        style="float: left;">교과목검색 Search Courses</button>
+	                    <button type="submit" style="float: left;">교과목검색(상세) Search Courses(Details)</button><br>
+	                    <button type="submit" style="clear: left; float: left;">로그아웃 Log-out</button>
+	                </td>
+	            </tr> 
+	        </table>
+	    </div>
+	    
+	
+	    <h4 style="color: blue; margin-bottom: 3px;">희망과목담기 내역(Details of Adding Courses)</h4>
+	    <hr>
+	    <div id="course_total">
+		    <label for="course_total"><span style="color:blue">희망과목수</span></label>
+		    <input type="text" id="course_total" value="0" readonly style="width:30px; float: right">
+		    <p style="margin-top:0px">Number of Courses</p>
+	    </div> 
+	    
+	    <div id="course_total">
+		    <p style="margin: 0 0 0 300px"><span style="color:blue">[희망과목은 최대 5과목만 담을 수 있습니다.]</span><br>[You can add up to 5 courses only.]</p>
+	    </div>
+	    
+	    <h3 id="overlap_alert"><%=eCookie%></h3>
+	
+	    <div class="main_contents">
+	        <table>
+	            <tr style="color: white; background-color: #74a5c2; border-top: 2px solid #056399">
+	                <td>집단구분 <br>Group</td>
+	                <td>과목구분 <br>Course Type</td>
+	                <td>과목번호 <br>Course Code</td>
+	                <td>과목명 <br>Course Title</td>
+	                <td>분반 <br>Section</td>
+	                <td>학점 <br>Credit</td>
+	                <td>신청 <br>Apply</td>
+	                <td>시간표요약정보 <br>Class Schedule</td>
+	                <td>비고 <br>Others</td>
+	            </tr>
+	            
+	         <%        	
+	            		// vlist의 크기만큼 반복문을 돌면서 쿼리문 결괏값을 각각의 변수에 저장
+	        			for (int i = 0; i < vlist.size(); ++i) {
+	        				cartBean = vlist.get(i);
+	        				String cGroup = cartBean.getGroup();
+	        				String cCourseType = cartBean.getCourseType();
+	        				String cCourseCode = cartBean.getCourseCode();
+	        				String cCourseTitle = cartBean.getCourseTitle();
+	        				String cSection = cartBean.getSection();
+	        				double cCredit = cartBean.getCredit();
+	        				String cClassSchedule = cartBean.getClassSchedule();
+	        				String cOthers = cartBean.getOthers();
+	        				int applyChk;
+	       	 				applyChk = i;      	
+	          %>
+	        <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
+	         <tr>
+	            <td><%=cGroup%></td>
+	            <td><%=cCourseType%></td>
+	            <td><%=cCourseCode%></td>
+	            <td><%=cCourseTitle%></td>
+	            <td><%=cSection%></td>
+	            <td><%=cCredit%></td>
+	          
+	            <td><input class="applyChk" type="submit" id="<%=applyChk%>" name="cartList" value="신청" onClick="buttonToggle(<%=applyChk%>);"></td>
+	            <td><%=cClassSchedule%></td>
+	            <td><%=cOthers%></td>
+	        </tr>
+	     
+	        <%
+	        			}
+	           	 	          
+	            %> 
+	    
+	    	   </table>
+	    </div>
+    </form>
     
    	<script defer src="./CourseCart.js"></script>
    	<script defer src="./CourseSearch.js"></script>
