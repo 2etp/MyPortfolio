@@ -13,18 +13,17 @@
 	Cookie[] cookies = request.getCookies();
 	
 	for(Cookie c : cookies) {
-	  if("courseCode".equals(c.getName())) {
-		  cCode = c.getValue();
-		  break;
-	  }
-	 
+		 if("courseCode".equals(c.getName())) {
+			  cCode = c.getValue();
+			  break;
+		 }
 	}
 	
 	for(Cookie c : cookies) {
 		if("errorCookie".equals(c.getName())) {
 			  eCookie = c.getValue();
 			  eCookie = "이미 신청된 과목입니다. 이 개나리야";
-		  }
+		 }
 	}
 	//out.println("cCode: " + cCode);
 	//out.println("eCookie: " + eCookie);

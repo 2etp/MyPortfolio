@@ -51,6 +51,7 @@ function addCookie(cName, cValue) {
 		courseCode = cName + '=' + escape(cValue) + '; path=/ ';
 		console.log("new " + courseCode);
 	} else {
+		deleteCookie();
 		// 쿠키가 존재하면 getCookie 함수를 통해 과목코드 가져옴
 		let codeCookie = getCookie("courseCode");
 		console.log("codeCookie: " + codeCookie);
@@ -84,8 +85,17 @@ function errorCookie() {
 	var expire = new Date(); 
 	expire.setDate(expire.getDate());
 	
-	var errorCookie = 'errorCookie=' + escape("test") + '; path=/ ';
+	var errorCookie = 'errorCookie=' + escape("overlap")
+					+ '; path=/ ';
 	document.cookie = errorCookie;
 	console.log("errorCookie: " + errorCookie);
 	
 }
+
+// 쿠키 삭제 함수
+function deleteCookie() { 
+	document.cookie = 'errorCookie' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=localhost;path=/;';
+	console.log("쿠키 삭제 함수 실행");
+}
+
+
