@@ -104,7 +104,7 @@
     </div>
     <br>
 
-   	<form name="cartFrm" method="post" action="CourseRegistration.jsp">
+   	<form name="cartFrm" method="post" action="CourseCart.jsp">
 	    <div class="menu">
 	        <table>
 	            <tr>
@@ -177,7 +177,7 @@
 	            <td><%=cSection%></td>
 	            <td><%=cCredit%></td>
 	          
-	            <td><input class="applyChk" type="submit" id="<%=applyChk%>" name="cartList" value="신청" onClick="buttonToggle(<%=applyChk%>);"></td>
+	            <td><button class="applyChk" type="submit" id="<%=applyChk%>" name="cartList" value="신청" onClick="buttonToggle(<%=applyChk%>);">신청</button></td>
 	            <td><%=cClassSchedule%></td>
 	            <td><%=cOthers%></td>
 	        </tr>

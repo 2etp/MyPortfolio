@@ -15,3 +15,15 @@ function buttonToggle(btnId) {
 		apply[btnId].value="신청";
 	}	
 }
+
+/*$(document).ready(function() {
+	$('.applyChk').click(function(btnId) {
+		if(apply[btnId].text=="신청") {
+			apply[btnId].text=="신청취소";
+		//$('.applyChk').text('신청');
+		}else if(apply[btnId].text=="신청취소") {
+			(apply[btnId].text=="신청");
+			
+		}
+	})
+})*/
