@@ -104,7 +104,7 @@
     </div>
     <br>
 
-   	<form name="cartFrm" method="post" action="CourseCart.jsp">
+   	<!-- <form name="cartFrm" method="post" action="CourseCart.jsp"> -->
 	    <div class="menu">
 	        <table>
 	            <tr>
@@ -189,7 +189,7 @@
 	    
 	    	   </table>
 	    </div>
-    </form>
+    <!-- </form> -->
     
    	<script defer src="./CourseCart.js"></script>
    	<script defer src="./CourseSearch.js"></script>
