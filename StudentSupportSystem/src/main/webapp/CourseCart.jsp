@@ -5,6 +5,7 @@
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <%	
+
 	Vector<CartBean> vlist = new Vector<CartBean>();
 
 	// 교과목코드에 해당하는 쿠키 값 가져오기
@@ -104,7 +105,7 @@
     </div>
     <br>
 
-   	<!-- <form name="cartFrm" method="post" action="CourseCart.jsp"> -->
+   	<!-- <form name="cartFrm" method="post" action="CourseRegistration.jsp">  -->
 	    <div class="menu">
 	        <table>
 	            <tr>
@@ -177,7 +178,7 @@
 	            <td><%=cSection%></td>
 	            <td><%=cCredit%></td>
 	          
-	            <td><button class="applyChk" type="submit" id="<%=applyChk%>" name="cartList" value="신청" onClick="buttonToggle(<%=applyChk%>);">신청</button></td>
+	            <td><input class="applyChk" type="submit" id="<%=applyChk%>" name="cartList" value="신청" onClick="buttonToggle(<%=applyChk%>);"></td>
 	            <td><%=cClassSchedule%></td>
 	            <td><%=cOthers%></td>
 	        </tr>
@@ -189,7 +190,7 @@
 	    
 	    	   </table>
 	    </div>
-    <!-- </form> -->
+     <!-- </form>  -->
     
    	<script defer src="./CourseCart.js"></script>
    	<script defer src="./CourseSearch.js"></script>
