@@ -4,6 +4,14 @@
 <jsp:useBean id="cartBean" class="CoursePack.CartBean"/>
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
+<% 
+	request.setCharacterEncoding("UTF-8");
+	String[] cartList = request.getParameterValues("cartList");
+	//for(int i = 0; i < cartList.length; ++i) {
+		//out.println(cartList[i]);
+	//}
+%>
+
 <%	
 
 	Vector<CartBean> vlist = new Vector<CartBean>();
@@ -105,7 +113,7 @@
     </div>
     <br>
 
-   	<!-- <form name="cartFrm" method="post" action="CourseRegistration.jsp">  -->
+   	<form name="cartFrm" method="post" action="CourseCart.jsp">
 	    <div class="menu">
 	        <table>
 	            <tr>
@@ -166,8 +174,8 @@
 	        				double cCredit = cartBean.getCredit();
 	        				String cClassSchedule = cartBean.getClassSchedule();
 	        				String cOthers = cartBean.getOthers();
-	        				int applyChk;
-	       	 				applyChk = i;      	
+	        				//int applyChk;
+	       	 				//applyChk = i;      	
 	          %>
 	        <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
 	         <tr>
@@ -178,7 +186,7 @@
 	            <td><%=cSection%></td>
 	            <td><%=cCredit%></td>
 	          
-	            <td><input class="applyChk" type="submit" id="<%=applyChk%>" name="cartList" value="신청" onClick="buttonToggle(<%=applyChk%>);"></td>
+	            <td><button class="applyChk<%=i%>" type="submit" id="<%=i%>" name="cartList" value="<%=cCourseCode%>" onClick="buttonToggle(<%=i%>);">신청</button></td>
 	            <td><%=cClassSchedule%></td>
 	            <td><%=cOthers%></td>
 	        </tr>
@@ -190,7 +198,7 @@
 	    
 	    	   </table>
 	    </div>
-     <!-- </form>  -->
+    </form>
     
    	<script defer src="./CourseCart.js"></script>
    	<script defer src="./CourseSearch.js"></script>
