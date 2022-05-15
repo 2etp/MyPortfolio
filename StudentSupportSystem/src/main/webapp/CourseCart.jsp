@@ -174,8 +174,7 @@
 	        				double cCredit = cartBean.getCredit();
 	        				String cClassSchedule = cartBean.getClassSchedule();
 	        				String cOthers = cartBean.getOthers();
-	        				//int applyChk;
-	       	 				//applyChk = i;      	
+	        			    	
 	          %>
 	        <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
 	         <tr>
