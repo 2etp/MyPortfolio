@@ -7,7 +7,8 @@
 	for(int i = 0; i < cartList.length; ++i) {
 		out.println(cartList[i]);
 	}
-%> --%>
+%>  --%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,8 +95,6 @@
 	    <input type="text" id="course_total" value="0" readonly style="width:30px; float: right">
 	    <p style="margin-top:0px">Number of Credits</p>
     </div>
-    
-    <%-- <h3 id="overlap_alert"><%=eCookie%></h3> --%>
 
     <div class="main_contents">
         <table>

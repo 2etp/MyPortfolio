@@ -9,9 +9,9 @@ import CoursePack.DBConnectionMgr;
 public class DBConnectionMgr {
     private Vector connections = new Vector(10);
     private String _driver = "com.mysql.cj.jdbc.Driver",
-    _url = "jdbc:mysql://localhost:9753/course",
+    _url = "jdbc:mysql://localhost:4020/course",
     _user = "root",
-    _password = "0266";
+    _password = "1234";
     private boolean _traceOn = true;
     private boolean initialized = false;
     private int _openConnections = 10;

@@ -5,11 +5,12 @@
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <% 
-	request.setCharacterEncoding("UTF-8");
-	String[] cartList = request.getParameterValues("cartList");
-	//for(int i = 0; i < cartList.length; ++i) {
-		//out.println(cartList[i]);
-	//}
+	//request.setCharacterEncoding("UTF-8");
+	//String cartList = request.getParameter("cartList");
+	/* for(int i = 0; i < cartList.length; ++i) {
+		out.println(cartList[i]);
+	} */
+	//out.println(cartList);
 %>
 
 <%	
@@ -113,7 +114,7 @@
     </div>
     <br>
 
-   	<form name="cartFrm" method="post" action="CourseCart.jsp">
+   	<form name="cartFrm" method="post" action="CartProc.jsp">
 	    <div class="menu">
 	        <table>
 	            <tr>
@@ -185,7 +186,7 @@
 	            <td><%=cSection%></td>
 	            <td><%=cCredit%></td>
 	          
-	            <td><button class="applyChk<%=i%>" type="submit" id="<%=i%>" name="cartList" value="<%=cCourseCode%>" onClick="buttonToggle(<%=i%>);">신청</button></td>
+	            <td><button class="applyChk<%=i%>" type="submit" id="<%=i%>" name="cartInput" value="<%=cCourseCode%>" onClick="buttonToggle(<%=i%>);">신청</button></td>
 	            <td><%=cClassSchedule%></td>
 	            <td><%=cOthers%></td>
 	        </tr>
@@ -198,7 +199,7 @@
 	    	   </table>
 	    </div>
     </form>
-    
+ 
    	<script defer src="./CourseCart.js"></script>
    	<script defer src="./CourseSearch.js"></script>
 </body>

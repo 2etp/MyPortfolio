@@ -64,7 +64,8 @@ public class SystemMgr {
 	// 희과담의 교과목검색 창에서 교과목 리스트 보여주기 기능
 	public Vector<SearchBean> searchList(String major) {
 		
-		if(major == null) return new Vector<SearchBean>();
+		if(major == null) 
+			return new Vector<SearchBean>();
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -96,6 +97,48 @@ public class SystemMgr {
 					searchBean.setOthers(rs.getString("Others"));
         			
 					vlist.addElement(searchBean);
+				}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vlist;
+	}
+	
+	public Vector<CartBean> cartInput(String cartApplyCode) {
+			
+		if(cartApplyCode == null) 
+			return new Vector<CartBean>();
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		Vector<CartBean> vlist = new Vector<CartBean>();
+	
+		try {
+			con = pool.getConnection();				
+			sql = "insert into cart_list(select * from course_cart where CourseCode = \'" + cartApplyCode + "\')";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+				while(rs.next()) {
+					CartBean cartBean = new CartBean();
+					
+					cartBean.setGroup(rs.getString("Grouping"));
+        			cartBean.setCourseType(rs.getString("CourseType"));
+        			cartBean.setCourseCode(rs.getString("CourseCode"));
+        			cartBean.setCourseTitle(rs.getString("CourseTitle"));
+        			cartBean.setSection(rs.getString("Section"));
+        			cartBean.setCredit(rs.getDouble("Credit"));
+        			cartBean.setClassSchedule(rs.getString("ClassSchedule"));
+        			cartBean.setOthers(rs.getString("Others"));
+        			
+					vlist.addElement(cartBean);
 				}
 			
 		} catch (Exception e) {
