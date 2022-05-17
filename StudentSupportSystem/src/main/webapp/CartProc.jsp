@@ -7,7 +7,7 @@
 <% 
 	request.setCharacterEncoding("UTF-8");
 	String cartInput = request.getParameter("cartInput");
-	Vector<CartBean> vlist = sMgr.cartInput(cartInput);
+	//boolean result = sMgr.cartInsert(cartInput);
 	
 	String location = "CourseCart.jsp";
 %>

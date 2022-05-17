@@ -107,45 +107,57 @@ public class SystemMgr {
 		return vlist;
 	}
 	
-	public Vector<CartBean> cartInput(String cartApplyCode) {
-			
-		if(cartApplyCode == null) 
-			return new Vector<CartBean>();
-		
+	// 희과담의 신청 버튼 클릭 시, 해당 과목 정보를 DB에 저장하는 기능
+	public boolean cartInsert(String cartApplyCode) {
+				
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		
-		Vector<CartBean> vlist = new Vector<CartBean>();
+		boolean flag = false;
 	
 		try {
 			con = pool.getConnection();				
-			sql = "insert into cart_list(select * from course_cart where CourseCode = \'" + cartApplyCode + "\')";
+			sql = "insert into cart_list(select * from course_cart where CourseCode = ?)";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, cartApplyCode);		
+			pstmt.executeUpdate();
 			
-			rs = pstmt.executeQuery();
-			
-				while(rs.next()) {
-					CartBean cartBean = new CartBean();
-					
-					cartBean.setGroup(rs.getString("Grouping"));
-        			cartBean.setCourseType(rs.getString("CourseType"));
-        			cartBean.setCourseCode(rs.getString("CourseCode"));
-        			cartBean.setCourseTitle(rs.getString("CourseTitle"));
-        			cartBean.setSection(rs.getString("Section"));
-        			cartBean.setCredit(rs.getDouble("Credit"));
-        			cartBean.setClassSchedule(rs.getString("ClassSchedule"));
-        			cartBean.setOthers(rs.getString("Others"));
-        			
-					vlist.addElement(cartBean);
-				}
-			
+			if(pstmt.executeUpdate() == 1)
+				flag = true;
+						
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			pool.freeConnection(con, pstmt, rs);
 		}
-		return vlist;
+		return flag;
+	}
+	
+	// 희과담의 신청 버튼 클릭 시, 해당 과목 정보를 DB에서 삭제하는 기능
+	public boolean cartDelete(String cartApplyCode) {
+				
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		boolean flag = false;
+	
+		try {
+			con = pool.getConnection();				
+			sql = "delete from cart_list where CourseCode = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, cartApplyCode);		
+			pstmt.executeUpdate();
+			
+			if(pstmt.executeUpdate() == 1)
+				flag = true;
+						
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return flag;
 	}
 }
