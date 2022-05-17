@@ -5,12 +5,11 @@
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <% 
-	//request.setCharacterEncoding("UTF-8");
-	//String cartList = request.getParameter("cartList");
-	/* for(int i = 0; i < cartList.length; ++i) {
-		out.println(cartList[i]);
-	} */
-	//out.println(cartList);
+	request.setCharacterEncoding("UTF-8");
+	String cartInsert = request.getParameter("cartInsert");
+	
+	boolean result = sMgr.cartInsert(cartInsert);
+	out.println(result);
 %>
 
 <%	
@@ -35,8 +34,7 @@
 			  eCookie = "이미 신청된 과목입니다. 이 개나리야";
 		 }
 	}
-	//out.println("cCode: " + cCode);
-	//out.println("eCookie: " + eCookie);
+
 	// 가져온 쿠키 문자열을 특정 문자를 기준으로 쪼개서 배열에 담음
 	String[] splitCode = cCode.split("%3B");
 	
@@ -114,7 +112,7 @@
     </div>
     <br>
 
-   	<form name="cartFrm" method="post" action="CartProc.jsp">
+   	<form name="cartFrm" method="post" action="CourseCart.jsp">
 	    <div class="menu">
 	        <table>
 	            <tr>
@@ -175,8 +173,8 @@
 	        				double cCredit = cartBean.getCredit();
 	        				String cClassSchedule = cartBean.getClassSchedule();
 	        				String cOthers = cartBean.getOthers();
-	        			    	
 	          %>
+	          
 	        <!-- 쿼리문 결괏값을 테이블 폼으로 출력 -->
 	         <tr>
 	            <td><%=cGroup%></td>
@@ -185,8 +183,17 @@
 	            <td><%=cCourseTitle%></td>
 	            <td><%=cSection%></td>
 	            <td><%=cCredit%></td>
-	          
-	            <td><button class="applyChk<%=i%>" type="submit" id="<%=i%>" name="cartInput" value="<%=cCourseCode%>" onClick="buttonToggle(<%=i%>);">신청</button></td>
+	            
+	            <%
+	            	String applyChk = "신청";
+	            	if(!result) {
+	            		applyChk = "신청취소";
+	            	}else {
+	            		applyChk = "신청";
+	            	}
+	            %>
+				<!-- <input type-"hidden" name="applyChk" value=""	     -->      
+	            <td><button class="applyChk<%=i%>" type="submit" id="<%=i%>" name="cartInsert" value="<%=cCourseCode%>" onClick="buttonToggle(<%=i%>);"><%=applyChk%></button></td>
 	            <td><%=cClassSchedule%></td>
 	            <td><%=cOthers%></td>
 	        </tr>

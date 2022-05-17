@@ -118,13 +118,27 @@ public class SystemMgr {
 	
 		try {
 			con = pool.getConnection();				
-			sql = "insert into cart_list(select * from course_cart where CourseCode = ?)";
+			sql = "select * from cart_list where CourseCode = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, cartApplyCode);		
-			pstmt.executeUpdate();
+			flag = pstmt.executeQuery().next();
 			
-			if(pstmt.executeUpdate() == 1)
-				flag = true;
+			if(flag) {
+				sql = "delete from cart_list where CourseCode = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, cartApplyCode);
+				pstmt.executeUpdate();
+				
+			
+				
+			} else {
+				sql = "insert into cart_list(select * from course_cart where CourseCode = ?)";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, cartApplyCode);
+				pstmt.executeUpdate();
+				
+
+			}
 						
 		} catch (Exception e) {
 			e.printStackTrace();

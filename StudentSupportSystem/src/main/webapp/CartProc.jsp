@@ -6,8 +6,8 @@
 
 <% 
 	request.setCharacterEncoding("UTF-8");
-	String cartInput = request.getParameter("cartInput");
-	//boolean result = sMgr.cartInsert(cartInput);
+	String cartInsert = request.getParameter("cartInsert");
+	boolean result = sMgr.cartInsert(cartInsert);
 	
 	String location = "CourseCart.jsp";
 %>
