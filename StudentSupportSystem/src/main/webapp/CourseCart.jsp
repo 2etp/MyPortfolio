@@ -179,7 +179,7 @@
 	         <tr>
 	            <td><%=cGroup%></td>
 	            <td><%=cCourseType%></td>
-	            <td><%=cCourseCode%></td>
+	            <td><%=cCourseCode%></td> 
 	            <td><%=cCourseTitle%></td>
 	            <td><%=cSection%></td>
 	            <td><%=cCredit%></td>
