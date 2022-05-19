@@ -9,8 +9,7 @@
 	String cartInsert = request.getParameter("cartInsert");
 	
 	boolean result = sMgr.cartInsert(cartInsert);
-	out.println(result);
-%>
+%> 
 
 <%	
 
