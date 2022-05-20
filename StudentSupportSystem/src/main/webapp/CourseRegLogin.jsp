@@ -4,6 +4,7 @@
 <jsp:useBean id="searchBean" class="CoursePack.SearchBean"/>
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,16 +14,20 @@
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	</head>
 <body>
-	<h1 style="color: blue; text-align: center;">2022 학년도 1학기 학부 수강신청<br></h1>
+	<h1 class="regLogTitle">2022 학년도 1학기 학부 수강신청<br></h1>
 	
-	<form>
-		<input type="text" placeholder="ID(학번)">
-		<input type="password" placeholder="PASSWORD(비밀번호)">
-		
-		<button type="submit" id="regLogBtn">Login</button>
+	<form name="regLogFrm" method="post" action="RegLoginProc.jsp">
+		<div class="regLogFrm">
+			<ul class="regLogInput">
+				<li><input type="text" placeholder="ID(학번)" name="id"></li>
+				<li><input type="password" placeholder="PASSWORD(비밀번호)" name="pw"></li>		
+			</ul>
+					
+			<button type="submit" id="regLogBtn">Login</button>
+		</div>
 	</form>
 	
-	<ul>
+	<ul style="margin-top: 50px;">
 		<li>수강신청 기간(2022 재학생): 2022.2.24(월) 08:00 ~ 2.28(금) 17:00</li>
 		<li>수강변경 기간: 2022.3.5(수) ~ 3.7(금) 08:00 ~ 18:00</li>
 		<li>로그인, 희망과목 삭제는 07:00부터 가능합니다.</li>

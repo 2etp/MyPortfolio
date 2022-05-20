@@ -205,8 +205,6 @@
 	    	   </table>
 	    </div>
     </form>
- 
-   	<script defer src="./CourseCart.js"></script>
-   	<script defer src="./CourseSearch.js"></script>
+
 </body>
 </html>

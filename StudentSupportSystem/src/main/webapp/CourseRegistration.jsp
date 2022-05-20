@@ -1,13 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
 <%@ page import="java.util.*"%>
 
-<%-- <%
+<%
 	request.setCharacterEncoding("UTF-8");
-	String[] cartList = request.getParameterValues("cartList");
-	for(int i = 0; i < cartList.length; ++i) {
-		out.println(cartList[i]);
-	}
-%>  --%>
+	
+%>
 
 <!DOCTYPE html>
 <html>
@@ -132,5 +129,7 @@
             </tr>
         </table>
     </div>
+    <script src="./CourseSearch.js"></script>
+    <script src="./CourseCart.js"></script>
 </body>
 </html>

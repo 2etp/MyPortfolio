@@ -1,5 +1,37 @@
+body {
+	width: 1000px;
+	margin: 0 auto ;
+}
+
+.regLogTitle {
+	color: blue; 
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.regLogInput {
+	list-style-type: none;
+	float: left;
+	margin: 0;
+}
+
 #regLogBtn {
 	background-color: #3482ca;
+	width: 150px;
+	height: 95px;
+	margin-left: 30px;
+}
+
+.regLogInput input[type=text], .regLogInput input[type=password] {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 13px;
+	padding: 5px;
 	width: 200px;
-	height: 200px;
+	height: 35px;
+}
+
+.regLogFrm {
+	margin-left: 250px;
+	height: 95px;
 }

@@ -148,25 +148,23 @@ public class SystemMgr {
 		return flag;
 	}
 	
-	// 희과담의 신청 버튼 클릭 시, 해당 과목 정보를 DB에서 삭제하는 기능
-	public boolean cartDelete(String cartApplyCode) {
-				
+	public boolean loginMember(String id, String pw) {
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
 		boolean flag = false;
-	
+		
 		try {
-			con = pool.getConnection();				
-			sql = "delete from cart_list where CourseCode = ?";
+			con = pool.getConnection();
+			sql = "select id from tblMember where id = ? and pw = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, cartApplyCode);		
-			pstmt.executeUpdate();
-			
-			if(pstmt.executeUpdate() == 1)
-				flag = true;
-						
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+			flag = rs.next();
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
