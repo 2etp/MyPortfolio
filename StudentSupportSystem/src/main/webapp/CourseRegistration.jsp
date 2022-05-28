@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" import="java.sql.*"%>
 <%@ page import="java.util.*"%>
+<jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
 	String pw = request.getParameter("password");
-	
-	
 %>
 
 <!DOCTYPE html>
