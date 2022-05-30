@@ -3,6 +3,7 @@
 <jsp:useBean id="sMgr" class="CoursePack.SystemMgr"/>
 
 
+
 <%
 	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
